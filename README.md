@@ -1,5 +1,5 @@
 # DATABASE-PROJECT
-In this repository will be uploaded gradually, my first programming project (it's not a joke :smiley:)
+In this repository will be uploaded gradually, my first programming project (it's not a joke, never mind that it's April Fool's Day :smiley:)
 
 STAY TUNED!
 
