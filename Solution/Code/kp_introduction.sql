@@ -50,12 +50,12 @@ name ENUM('Pop', 'Hip-hop', 'Folk', 'Rock', 'Classical') NOT NULL
 CREATE TABLE song (
 id INT AUTO_INCREMENT PRIMARY KEY,
 name VARCHAR(255) NOT NULL,
-link VARCHAR(255) NOT NULL,
-genre VARCHAR(100) NOT NULL,
-style VARCHAR(100) NOT NULL,
-arrangement VARCHAR(100) NOT NULL,
-duration INT NOT NULL,
-numberOfViews INT NOT NULL,
+link VARCHAR(255) NOT NULL,               /*линк на песента в youtube примерно*/
+genre VARCHAR(100) NOT NULL,              /*жанр на песента*/
+style VARCHAR(100) NOT NULL,              /*стил на песента*/
+arrangement VARCHAR(100) NOT NULL,        /*аранжимент*/ 
+duration INT NOT NULL,                    /*продължителност*/
+numberOfViews INT NOT NULL,               /*брой гледания*/
 order_id INT NOT NULL,
 category_id INT NOT NULL,
 CONSTRAINT FOREIGN KEY (order_id) REFERENCES orders(id),
@@ -91,9 +91,9 @@ CONSTRAINT FOREIGN KEY (song_id) REFERENCES song(id)
 CREATE TABLE albums (
 id INT AUTO_INCREMENT PRIMARY KEY,
 name VARCHAR(255) NOT NULL,
-numberOfSongs INT NOT NULL,
-length DECIMAL(4,2),                /*дължината на всички песни в минути и секунди*/
-release_date DATE NOT NULL,
+numberOfSongs INT NOT NULL,          /*брой на всички песни в албума*/
+length DECIMAL(4,2),                 /*дължината на всички песни в минути и секунди*/
+release_date DATE NOT NULL,          /*дата на издаване*/
 record_label VARCHAR(255) NOT NULL,  /*музикален издател или звукозаписна компания*/
 performer_id INT NOT NULL,
 CONSTRAINT FOREIGN KEY (performer_id) REFERENCES performer(id)
@@ -102,8 +102,8 @@ CONSTRAINT FOREIGN KEY (performer_id) REFERENCES performer(id)
 
 CREATE TABLE sales (
 id INT AUTO_INCREMENT PRIMARY KEY,
-sale_date DATE NOT NULL,
-sale_price DECIMAL (10,2) NOT NULL,
+sale_date DATE NOT NULL,              /*дата на продажбата*/
+sale_price DECIMAL (10,2) NOT NULL,   /*цена на продажбата*/
 song_id INT NOT NULL,
 orders_id INT NOT NULL,
 CONSTRAINT FOREIGN KEY (song_id) REFERENCES song(id),
