@@ -44,7 +44,7 @@ CONSTRAINT FOREIGN KEY (user_id) REFERENCES user(id)
 
 CREATE TABLE category (                        /*в тази таблица ще съхраняваме категориите на песните в сайта*/
 id INT AUTO_INCREMENT PRIMARY KEY,
-name ENUM('Pop', 'Hip-hop', 'Folk', 'Rock') NOT NULL
+name ENUM('Pop', 'Hip-hop', 'Jazz', 'Rock') NOT NULL
 );
 
 
@@ -285,3 +285,69 @@ VALUES (NULL, '2022-03-14', 50.00, 'paid', 'delivered', 1),
        (NULL, '2022-04-26', 91.00, 'not paid', 'not delivered', 4),
        (NULL, '2022-04-27', 83.00, 'paid', 'delivered', 4),
        (NULL, '2022-04-27', 42.00, 'not paid', 'not delivered', 4);
+       
+       
+INSERT INTO song 
+VALUES (NULL, 'Hotline Bling', 'https://www.youtube.com/watch?v=uxpDa-c-4Mc&list=PLn4GvABOzCQuZrM1YBvzlYVCkQpZkhXLS&index=2', 'Pop', 'Trap', 'Duo', 181, 1234, 2, 2),
+	   (NULL, 'Blinding Lights', 'https://www.youtube.com/watch?v=4NRXx6U8ABQ', 'Pop', 'Synth-pop', 'Solo', 210, 9876, 3, 1),
+       (NULL, 'Stairway to Heaven', 'https://www.youtube.com/watch?v=QkF3oxziUI4', 'Rock', 'Classic rock', 'Band', 481, 5678, 5, 3),
+       (NULL, 'Old Town Road', 'https://www.youtube.com/watch?v=w2Ov5jzm3j8', 'Hip-hop', 'Country rap', 'Solo', 157, 3456, 6, 2),
+       (NULL, 'Billie Jean', 'https://www.youtube.com/watch?v=Zi_XLOBDo_Y', 'Pop', 'Funk', 'Solo', 294, 1234, 9, 1),
+       (NULL, 'Round Midnight', 'https://www.youtube.com/watch?v=Ys9wiGNDCvA', 'Jazz', 'Bebop', 'Quartet', 375, 11000000, 4, 1),
+       (NULL, 'In My Feelings', 'https://www.youtube.com/watch?v=DRS_PpOrUZ4', 'Hip-hop', 'Trap', 'Solo', 217, 8901, 10, 2),
+       (NULL, 'Shallow', 'https://www.youtube.com/watch?v=bo_efYhYU2A', 'Pop', 'Pop rock', 'Duo', 215, 5678, 12, 1),
+       (NULL, 'Thrift Shop', 'https://www.youtube.com/watch?v=QK8mJJJvaes', 'Hip-hop', 'Pop rap', 'Duo', 235, 3456, 13, 2),
+       (NULL, 'Wonderwall', 'https://www.youtube.com/watch?v=6hzrDeceEKc', 'Rock', 'Britpop', 'Solo', 258, 7890, 14, 3),
+	   (NULL, 'Sicko Mode', 'https://www.youtube.com/watch?v=6ONRf7h3Mdk', 'Hip-hop', 'Trap', 'Duo', 312, 4567, 15, 2),
+       (NULL, 'Sweet Child O Mine', 'https://www.youtube.com/watch?v=1w7OgIMMRc4', 'Rock', 'Hard rock', 'Band', 355, 1234, 16, 3),
+       (NULL, 'All of Me', 'https://www.youtube.com/watch?v=450p7goxZqg', 'Pop', 'Soul', 'Solo', 269, 8901, 17, 1),
+       (NULL, 'Sorry', 'https://www.youtube.com/watch?v=fRh_vgS2dFE', 'Pop', 'Dance-pop', 'Group', 200, 7234, 2, 1),
+       (NULL, 'So What', 'https://www.youtube.com/watch?v=ylXk1LBvIqU', 'Jazz', 'Modal Jazz', 'Quintet', 579, 32000000, 8, 1),
+       (NULL, 'Uptown Funk', 'https://www.youtube.com/watch?v=OPf0YbXqDm0', 'Pop', 'Funk', 'Band', 270, 8265, 3, 1),
+       (NULL, 'Lose Yourself', 'https://www.youtube.com/watch?v=_Yhyp-_hX2s', 'Hip-hop', 'Hardcore hip-hop', 'Solo', 341, 4156, 5, 2),
+       (NULL, 'I Will Always Love You', 'https://www.youtube.com/watch?v=3JWTaaS7LdU', 'Pop', 'Pop ballad', 'Solo', 271, 8956, 6, 1),
+       (NULL, 'Bohemian Rhapsody', 'https://www.youtube.com/watch?v=fJ9rUzIMcZQ', 'Rock', 'Progressive rock', 'Band', 356, 1789, 8, 4),
+       (NULL, 'November Rain', 'https://www.youtube.com/watch?v=8SbUC-UaAxE', 'Rock', 'Power ballad', 'Band', 537, 2894, 10, 4),
+       (NULL, 'Despacito', 'https://www.youtube.com/watch?v=kJQP7kiw5Fk', 'Pop', 'Latin pop', 'Duo', 228, 6452, 11, 1),
+       (NULL, 'Girls Like You', 'https://www.youtube.com/watch?v=aJOTlE1K90k', 'Pop', 'Pop rock', 'Group', 259, 3526, 12, 1),
+       (NULL, 'All of Me', 'https://www.youtube.com/watch?v=450p7goxZqg', 'Pop', 'R&B', 'Solo', 269, 9867, 13, 1),
+       (NULL, 'Believer', 'https://www.youtube.com/watch?v=7wtfhZwyrcc', 'Rock', 'Alternative rock', 'Group', 204, 7345, 14, 4),
+       (NULL, 'Sweet Child o Mine', 'https://www.youtube.com/watch?v=1w7OgIMMRc4', 'Rock', 'Hard rock', 'Band', 355, 8762, 15, 4),
+       (NULL, 'Perfect', 'https://www.youtube.com/watch?v=2Vv-BfVoq4g', 'Pop', 'Pop ballad', 'Solo', 263, 5421, 16, 1),
+       (NULL, 'Counting Stars', 'https://www.youtube.com/watch?v=hT_nvWreIhg', 'Pop', 'Pop rock', 'Group', 257, 9264, 17, 1),
+       (NULL, 'Take Five', 'https://www.youtube.com/watch?v=vmDDOFXSgAs', 'Jazz', 'Cool Jazz', 'Saxophone Quartet', 173, 21200000, 1, 1),
+       (NULL, 'All Blues', 'https://www.youtube.com/watch?v=-488UORrfJ0', 'Jazz', 'Modal Jazz', 'Sextet', 663, 13000000, 2, 1),
+       (NULL, 'In a Sentimental Mood', 'https://www.youtube.com/watch?v=r594pxUjcz4', 'Jazz', 'Swing', 'Trio', 401, 5000000, 3, 1),
+       (NULL, 'Smells Like Teen Spirit', 'https://www.youtube.com/watch?v=hTWKbfoikeg', 'Rock', 'Grunge', 'Electric', 301, 1, 2, 1),
+       (NULL, 'Livin on a Prayer', 'https://www.youtube.com/watch?v=lDK9QqIzhwk', 'Rock', 'Pop Rock', 'Electric', 246, 1, 2, 1),
+       (NULL, 'Sweet Child o Mine', 'https://www.youtube.com/watch?v=1w7OgIMMRc4', 'Rock', 'Hard Rock', 'Electric', 348, 1, 2, 1),
+       (NULL, 'Thunderstruck', 'https://www.youtube.com/watch?v=v2AC41dglnM', 'Rock', 'Heavy metal', 'Blues rock', 292, 700000, 11, 2),
+       (NULL, 'Wish You Were Here', 'https://www.youtube.com/watch?v=IXdNnw99-Ic', 'Rock', 'Progressive Rock', 'Acoustic', 334, 1500000, 12, 1),
+       (NULL, 'Satisfaction', 'https://www.youtube.com/watch?v=nrIPxlFzDi0', 'Rock', 'Hard rock', 'Guitar, bass, drums, vocals', 218, 103500000, 1, 1);
+       
+INSERT INTO reviews
+VALUES (NULL, 8.5, 'Awesome song, love the guitar solo!', '2022-03-28', 1, 1),
+       (NULL, 6.2, 'Not my favorite song, but still decent', '2022-03-29', 2, 1),
+       (NULL, 9.8, 'One of the best jazz songs I have ever heard', '2022-03-30', 3, 2),
+       (NULL, 7.5, 'Nice melody, but the lyrics are a bit weak', '2022-03-31', 4, 2),
+       (NULL, 5.6, 'Not my style of music, but still a decent song', '2022-04-01', 5, 3),
+       (NULL, 6.9, 'Catchy tune, but the vocals could be better', '2022-04-02', 6, 3),
+       (NULL, 8.2, 'Great rock ballad, love the emotional vocals', '2022-04-03', 7, 4),
+       (NULL, 7.1, 'Not the best rock song I have ever heard, but still enjoyable', '2022-04-04', 8, 4),
+       (NULL, 9.5, 'Amazing rap song, great flow and lyrics!', '2022-04-05', 9, 5),
+       (NULL, 8.0, 'Decent rap song, but I have heard better', '2022-04-06', 10, 5),
+       (NULL, 6.8, 'Not my type of music, but still a well-produced track', '2022-04-07', 11, 6),
+       (NULL, 7.9, 'Nice beat and flow, but the lyrics could be more meaningful', '2022-04-08', 12, 6),
+       (NULL, 8.7, 'Fantastic folk song, great vocal harmonies', '2022-04-09', 13, 7),
+       (NULL, 7.2, 'Not a fan of folk music, but still a well-crafted song', '2022-04-10', 14, 7),
+       (NULL, 9.5, 'Brilliant guitar work, loved every minute of it', '2022-04-01', 6, 5),
+       (NULL, 6.7, 'Not my cup of tea, but it is well produced', '2022-04-02', 7, 6),
+       (NULL, 7.8, 'Nice melody, but nothing too special', '2022-04-02', 8, 7),
+       (NULL, 9.2, 'Amazing jazz vocals, love this song!', '2022-04-03', 9, 8),
+       (NULL, 8.5, 'Solid track, great guitar solo!', '2022-04-03', 10, 9),
+       (NULL, 9.0, 'One of my favorite jazz tracks of all time', '2022-04-04', 11, 10),
+       (NULL, 7.3, 'Decent song, but not too memorable', '2022-04-04', 12, 11),
+       (NULL, 7.0, 'Average song, nothing really stood out', '2022-04-07', 18, 17);
+       
+INSERT INTO performer(id, name, egn, address, dateOfBirth, genre, song_id)
+VALUES (NULL, 'Drake', '9123456782', '111 Pine St, San Francisco, CA 94111', '1986-10-24', 
