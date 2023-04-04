@@ -132,7 +132,7 @@ PRIMARY KEY (composer_id, album_id)
 
 INSERT INTO composer (name, egn, nationality, phone, dateOfBirth)
 VALUES ('Ludovico Einaudi', '1010104305', 'Italy', '+39023234567', '1955-11-23'),
-	   ('Max Richter', '2109080272', 'Germany', '+49224567890', '1966-03-22'),
+       ('Max Richter', '2109080272', 'Germany', '+49224567890', '1966-03-22'),
 	   ('Jóhann Jóhannsson', '1203080903', 'Iceland', '+3541234567', '1969-09-19'),
 	   ('Hildur Guðnadóttir', '2104040404', 'Iceland', '+3542345678', '1982-09-04'),
 	   ('Nico Muhly', '2105050505', 'USA', '+12125551234', '1981-08-26'),
