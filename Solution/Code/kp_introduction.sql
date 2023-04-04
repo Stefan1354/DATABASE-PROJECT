@@ -14,7 +14,7 @@ dateOfBirth DATE NOT NULL
 
 CREATE TABLE userRole (
 id INT AUTO_INCREMENT PRIMARY KEY,
-name ENUM('Administrator', 'Customer', 'Author')
+name VARCHAR(255) NOT NULL
 );
 
 
