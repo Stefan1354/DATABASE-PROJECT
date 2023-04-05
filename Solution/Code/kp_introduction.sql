@@ -373,3 +373,62 @@ VALUES (NULL, 8.5, 'Awesome song, love the guitar solo!', '2022-03-28', 1, 1),
        (NULL, 9.0, 'One of my favorite jazz tracks of all time', '2022-04-04', 11, 10),
        (NULL, 7.3, 'Decent song, but not too memorable', '2022-04-04', 12, 11),
        (NULL, 7.0, 'Average song, nothing really stood out', '2022-04-07', 18, 17);
+       
+INSERT INTO albums
+VALUES (NULL, 'Take Care', 14, 80.20, '2011-11-15', 'Republic Records', 1),
+	   (NULL, 'After Hours', 14, 56.50, '2020-03-20', 'XO, Republic Records', 2),
+       (NULL, 'Led Zeppelin IV', 8, 42.39, '1971-11-08', 'Atlantic Records', 3),
+       (NULL, 'The Joshua Tree', 11, 50.13, '1987-03-09', 'Island Records', 4),
+       (NULL, 'Thriller', 9, 42.19, '1982-11-30', 'Epic Records', 5),
+       (NULL, 'Kind of Blue', 5, 45.44, '1959-08-17', 'Columbia Records', 6),
+       (NULL, 'Nothing Was the Same', 13, 59.22, '2013-09-24', 'OVO, Republic Records', 1),
+	   (NULL, 'Born This Way', 14, 61.24, '2011-05-23', 'Streamline, Kon Live, Interscope', 8),
+       (NULL, 'A Star Is Born Soundtrack', 34, 65.56, '2018-10-05', 'Interscope Records', 9),
+       (NULL, 'GEMINI', 16, 60.13, '2017-09-22', 'Bendo LLC', 14),
+       (NULL, 'The Fall Off', 14, 56.25, '2010-12-25', 'Dreamville, Roc Nation, Interscope Records', 15),
+	   (NULL, 'Reputation', 15, 55.29, '2017-11-10', 'Big Machine Records', 18),
+       (NULL, 'To Pimp a Butterfly', 16, 78.49, '2015-03-16', 'Top Dawg Entertainment', 13),
+       (NULL, 'DAMN.', 14, 55.07, '2017-04-14', 'Top Dawg Entertainment', 13),
+       (NULL, 'Innervisions', 9, 43.18, '1973-08-03', 'Tamla Records', 14),
+       (NULL, 'Songs in the Key of Life', 21, 100.53, '1976-09-28', 'Tamla Records', 14),
+	   (NULL, 'Montero', 15, 43.29, '2021-09-17', 'Columbia Records', 7),
+       (NULL, 'Thriller', 9, 42.19, '1982-11-30', 'Epic Records', 8),
+       (NULL, 'Kind of Blue', 5, 45.52, '1959-08-17', 'Columbia Records', 9),
+       (NULL, 'Scorpion', 25, 89.04, '2018-06-29', 'Cash Money Records', 1),
+       (NULL, 'A Star is Born', 19, 66.14, '2018-10-05', 'Interscope Records', 8);
+    
+INSERT INTO sales 
+VALUES(NULL, '2022-03-14', 10.99, 1, 1),
+	  (NULL, '2022-03-14', 9.99, 2, 2),
+      (NULL, '2022-03-15', 8.99, 3, 3),
+      (NULL, '2022-03-15', 7.99, 4, 4),
+      (NULL, '2022-03-16', 6.99, 5, 5),
+      (NULL, '2022-03-17', 5.99, 6, 6),
+      (NULL, '2022-03-18', 4.99, 7, 7),
+      (NULL, '2022-03-18', 3.99, 8, 8),
+      (NULL, '2022-03-18', 2.99, 9, 9),
+      (NULL, '2022-03-18', 1.99, 10, 10),
+      (NULL, '2022-04-19', 0.99, 11, 11),
+      (NULL, '2022-04-19', 0.49, 12, 12),
+      (NULL, '2022-04-20', 0.39, 13, 13),
+      (NULL, '2022-04-21', 0.29, 14, 14),
+      (NULL, '2022-04-22', 0.19, 15, 15),
+      (NULL, '2022-04-25', 0.09, 16, 16),
+      (NULL, '2022-04-25', 0.01, 17, 17),
+      (NULL, '2022-04-25', 0.50, 18, 18),
+      (NULL, '2022-04-26', 0.75, 19, 19),
+      (NULL, '2022-04-27', 1.00, 20, 20);
+
+
+INSERT INTO composer_songs (composer_id, song_id) 
+VALUES (1, 1),
+       (1, 2),
+       (2, 1),
+       (3, 2);
+       
+INSERT INTO composer_albums (composer_id, album_id)
+VALUES (1, 1),
+       (1, 2),
+       (2, 2),
+       (3, 3),
+       (4, 3);
