@@ -432,3 +432,15 @@ VALUES (1, 1),
        (2, 2),
        (3, 3),
        (4, 3);
+
+#2
+/*SELECT * FROM user
+WHERE isAdmin = TRUE;*/
+
+/*SELECT * FROM orders
+WHERE user_id = 2;*/
+
+#3
+SELECT user_id, SUM(orders.price) AS totalPrice
+FROM orders
+GROUP BY user_id;
