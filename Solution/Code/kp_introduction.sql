@@ -93,7 +93,7 @@ CREATE TABLE albums (
 id INT AUTO_INCREMENT PRIMARY KEY,
 name VARCHAR(255) NOT NULL,
 numberOfSongs INT NOT NULL,
-length DECIMAL(4,2),                /*дължината на всички песни в минути и секунди*/
+length DECIMAL(6,2),                /*дължината на всички песни в минути и секунди*/
 release_date DATE NOT NULL,
 record_label VARCHAR(255) NOT NULL,  /*музикален издател или звукозаписна компания*/
 performer_id INT NOT NULL,
@@ -284,7 +284,7 @@ VALUES ('2022-03-14', 50.00, 'paid', 'delivered', 1),
        ('2022-04-26', 78.00, 'paid', 'delivered', 46),
        ('2022-04-26', 91.00, 'not paid', 'not delivered', 47),
        ('2022-04-27', 83.00, 'paid', 'delivered', 48),
-       ('2022-04-27', 42.00, 'not paid', 'not delivered', 49);
+       ('2022-04-27', 42.00, 'not paid', 'not delivered', 48);
        
 INSERT INTO category
 VALUES (NULL, 'Pop'),
@@ -317,7 +317,7 @@ VALUES (NULL, 'Hotline Bling', 'https://www.youtube.com/watch?v=uxpDa-c-4Mc&list
        (NULL, 'All of Me', 'https://www.youtube.com/watch?v=450p7goxZqg', 'Pop', 'R&B', 'Solo', 269, 9867, 13, 1),
        (NULL, 'Believer', 'https://www.youtube.com/watch?v=7wtfhZwyrcc', 'Rock', 'Alternative rock', 'Group', 204, 7345, 14, 4),
        (NULL, 'Sweet Child o Mine', 'https://www.youtube.com/watch?v=1w7OgIMMRc4', 'Rock', 'Hard rock', 'Band', 355, 8762, 15, 4),
-       (NULL, 'Perfect', 'https://www.youtube.com/watch?v=2Vv-BfVoq4g', 'Pop', 'Pop ballad', 'Solo', 263, 5421, 16, 1),
+       (NULL, 'I Love You', 'https://www.youtube.com/watch?v=VGyT3gOxlcg', 'Pop', 'Pop ballad', 'Solo', 263, 5421, 16, 1),
        (NULL, 'Counting Stars', 'https://www.youtube.com/watch?v=hT_nvWreIhg', 'Pop', 'Pop rock', 'Group', 257, 9264, 17, 1),
        (NULL, 'Take Five', 'https://www.youtube.com/watch?v=vmDDOFXSgAs', 'Jazz', 'Cool Jazz', 'Saxophone Quartet', 173, 21200000, 1, 3),
        (NULL, 'All Blues', 'https://www.youtube.com/watch?v=-488UORrfJ0', 'Jazz', 'Modal Jazz', 'Sextet', 663, 13000000, 2, 3),
@@ -327,13 +327,15 @@ VALUES (NULL, 'Hotline Bling', 'https://www.youtube.com/watch?v=uxpDa-c-4Mc&list
        (NULL, 'Sweet Child o Mine', 'https://www.youtube.com/watch?v=1w7OgIMMRc4', 'Rock', 'Hard Rock', 'Electric', 348, 1, 38, 4),
        (NULL, 'Thunderstruck', 'https://www.youtube.com/watch?v=v2AC41dglnM', 'Rock', 'Heavy metal', 'Blues rock', 292, 700000, 11, 4),
        (NULL, 'Wish You Were Here', 'https://www.youtube.com/watch?v=IXdNnw99-Ic', 'Rock', 'Progressive Rock', 'Acoustic', 334, 1500000, 12, 4),
-       (NULL, 'Satisfaction', 'https://www.youtube.com/watch?v=nrIPxlFzDi0', 'Rock', 'Hard rock', 'Guitar, bass, drums, vocals', 218, 103500000, 1, 4);
+       (NULL, 'Satisfaction', 'https://www.youtube.com/watch?v=nrIPxlFzDi0', 'Rock', 'Hard rock', 'Guitar, bass, drums, vocals', 218, 103500000, 1, 4),
+       (NULL ,'Shape Of You', 'https://www.youtube.com/watch?v=JGwWNGJdvx8', 'Dancehall', 'Hip-hop', 'Tropical House', 263, 5900000, 3, 2);
        
     
 INSERT INTO performer(id, name, egn, address, dateOfBirth, genre, song_id)
 VALUES (NULL, 'Drake', '9124656742', '111 Pine St San Francisco, CA 94111', '1986-10-24', 'Trap', 1),
        (NULL, 'The Weeknd', '9219309213', '456 Oak Ave Springfield, USA', '1990-02-16', 'Synth-pop', 2),
        (NULL, 'Jimmy Page', '9029831092', '1111 Maple Ln Anytown, USA', '1944-01-09', 'Classic rock', 3),
+       (NULL, 'Ed Sheeran', '2909719423', '9999 Cedar Dr Anytown, USA', '1991-02-17', 'Dancehall', 36),
        (NULL, 'Robert Plant', '9432008792', '1818 Maple Blvd Anytown, USA', '1948-08-20', 'Classic rock', 3),
        (NULL, 'John Bonham', '8793201034', '1919 Birch St Springfield, USA', '1948-05-31', 'Classic rock', 3),
        (NULL, 'John Paul Jones', '2907980123', '2525 Pine Ln Springfield, USA', '1946-01-03', 'Bebop', 3),
@@ -378,7 +380,7 @@ INSERT INTO albums
 VALUES (NULL, 'Take Care', 14, 80.20, '2011-11-15', 'Republic Records', 1),
 	   (NULL, 'After Hours', 14, 56.50, '2020-03-20', 'XO, Republic Records', 2),
        (NULL, 'Led Zeppelin IV', 8, 42.39, '1971-11-08', 'Atlantic Records', 3),
-       (NULL, 'The Joshua Tree', 11, 50.13, '1987-03-09', 'Island Records', 4),
+       (NULL, 'Divide', 11, 50.13, '2017-03-03', 'Asylum', 4),
        (NULL, 'Thriller', 9, 42.19, '1982-11-30', 'Epic Records', 5),
        (NULL, 'Kind of Blue', 5, 45.44, '1959-08-17', 'Columbia Records', 6),
        (NULL, 'Nothing Was the Same', 13, 59.22, '2013-09-24', 'OVO, Republic Records', 1),
@@ -386,7 +388,7 @@ VALUES (NULL, 'Take Care', 14, 80.20, '2011-11-15', 'Republic Records', 1),
        (NULL, 'A Star Is Born Soundtrack', 34, 65.56, '2018-10-05', 'Interscope Records', 9),
        (NULL, 'GEMINI', 16, 60.13, '2017-09-22', 'Bendo LLC', 14),
        (NULL, 'The Fall Off', 14, 56.25, '2010-12-25', 'Dreamville, Roc Nation, Interscope Records', 15),
-	   (NULL, 'Reputation', 15, 55.29, '2017-11-10', 'Big Machine Records', 18),
+	   (NULL, 'The Orange Room', 15, 55.29, '2005-03-01', 'Sheeran Lock', 18),
        (NULL, 'To Pimp a Butterfly', 16, 78.49, '2015-03-16', 'Top Dawg Entertainment', 13),
        (NULL, 'DAMN.', 14, 55.07, '2017-04-14', 'Top Dawg Entertainment', 13),
        (NULL, 'Innervisions', 9, 43.18, '1973-08-03', 'Tamla Records', 14),
@@ -424,7 +426,15 @@ INSERT INTO composer_songs (composer_id, song_id)
 VALUES (1, 1),
        (1, 2),
        (2, 1),
-       (3, 2);
+       (3, 2),
+       (4, 2),
+       (5, 4),
+       (10, 5),
+       (12, 8),
+       (20, 10),
+       (25, 10),
+       (15, 7),
+       (15, 13);
        
 INSERT INTO composer_albums (composer_id, album_id)
 VALUES (1, 1),
@@ -432,15 +442,112 @@ VALUES (1, 1),
        (2, 2),
        (3, 3),
        (4, 3);
+       
+       
+       
+/*Сега с някои елементарни заявки ще тествам програмата*/
+
 
 #2
+/*Тази заявка ще изведе всички записи от таблицата "user", където стойността на колоната "isAdmin" е TRUE (истина).*/
 /*SELECT * FROM user
 WHERE isAdmin = TRUE;*/
 
+#3
+/*Тази заявка извежда всички поръчки (orders) на потребител с идентификатор (user_id) 2.*/
 /*SELECT * FROM orders
 WHERE user_id = 2;*/
 
-#3
-SELECT user_id, SUM(orders.price) AS totalPrice
+#4
+/*Тази заявка извежда обобщена информация за поръчките на всеки потребител, като ги групира по 
+потребителски идентификатор (user_id) и сумира стойността на поръчките му (price). Резултатът включва две колони - user_id и totalPrice.*/
+/*SELECT user_id, SUM(orders.price) AS totalPrice
 FROM orders
 GROUP BY user_id;
+*/
+
+#5
+/*Заявката извежда имената на всички изпълнители, които са изпълнили песента "Stairway to Heaven"*/
+/*SELECT performer.name AS performerNames FROM
+performer JOIN song
+ON performer.song_id = song.id
+WHERE song.name = 'Stairway to Heaven';*/
+
+#6
+/*Тази заявка извлича информация за песните, които са изпълнени от Ed Sheeran и са включени в албуми, 
+сортирани в низходящ ред спрямо датата на издаване*/
+/*SELECT song.name AS nameOfSong, albums.release_date AS releaseDate, performer.name AS performerName
+FROM song JOIN performer ON
+song.id = performer.song_id
+JOIN albums ON performer.id = albums.performer_id
+WHERE performer.name = 'Ed Sheeran'
+ORDER BY release_date desc;
+*/
+
+#7
+/*Тази заявка извежда имената на всички албуми на изпълнителя "Ed Sheeran", заедно с името на самия изпълнител.*/
+/*SELECT albums.name AS nameOfAlbum, performer.name AS performerName
+FROM albums JOIN performer
+ON albums.performer_id = performer.id
+WHERE performer.name = 'Ed Sheeran';*/
+
+#8
+/*Тази заявка извлича имената на всички композитори и песни, които са свързани с певеца Lil Nas X.*/
+/*SELECT composer.name AS composerName, song.name AS songName
+FROM composer JOIN composer_songs ON
+composer.id = composer_songs.composer_id
+JOIN song ON song.id = composer_songs.song_id
+JOIN performer ON song.id = performer.song_id
+WHERE performer.name = 'Lil Nas X';*/
+
+#9
+/*Тази заявка извлича имената на всички изпълнители, които изпълняват песни, написани от композитора с име 'Christopher Cerrone'*/
+/*SELECT composer.name AS composerName, performer.name AS performerName
+FROM composer JOIN composer_songs ON composer.id = composer_songs.composer_id
+JOIN song ON composer_songs.song_id = song.id
+JOIN performer ON song.id = performer.song_id
+WHERE composer.name = 'Christopher Cerrone';*/
+
+#10
+/*Тази заявка извежда всички песни, които са написани от композитора "Christopher Cerrone" и са включени в някой от албумите, 
+на които той е работил*/
+/*SELECT song.name AS songName FROM 
+composer_songs JOIN song ON composer_songs.song_id = song.id
+JOIN composer ON composer.id = composer_songs.composer_id
+JOIN composer_albums ON composer.id = composer_albums.composer_id
+JOIN albums ON composer_albums.album_id = albums.id
+WHERE composer.name = 'Christopher Cerrone';*/
+
+#11
+/*Тази заявка ще изведе имената на всички песни, които имат композитор в таблицата composer 
+чрез свързване на таблиците song и composer_songs по song_id, като включва името на композитора от таблицата composer 
+чрез свързване на таблиците composer_songs и composer по composer_id.*/
+SELECT song.name AS songName
+FROM song JOIN composer_songs
+ON song.id = composer_songs.song_id
+JOIN composer ON composer.id = composer_songs.composer_id
+WHERE composer.name = 'Christopher Cerrone';
+
+#12
+/*Тази заявка извежда всички записи от таблицата "sales", където цената на продажбата е по-голяма от 4*/
+SELECT *
+FROM sales
+WHERE sale_price > 4;
+
+#13
+/*Тази заявка извлича броя на песните, които са написани от композитора Christopher Cerrone.*/
+SELECT COUNT(song_id)
+FROM composer_songs
+WHERE composer_id = (SELECT id FROM composer WHERE name = 'Christopher Cerrone');
+
+#14
+/*Горната заявка връща имената на всички албуми на композитора 'Jóhann Jóhannsson', като за всеки албум изписва броя на песните му,
+които са били компонирани от съответния композитор*/
+SELECT albums.name AS albumName, COUNT(composer_songs.song_id) AS songCount
+FROM albums
+JOIN composer_albums ON albums.id = composer_albums.album_id
+JOIN composer ON composer.id = composer_albums.composer_id
+JOIN composer_songs ON composer.id = composer_songs.composer_id
+JOIN song ON composer_songs.song_id = song.id
+WHERE composer.name = 'Jóhann Jóhannsson'
+GROUP BY albums.id;
