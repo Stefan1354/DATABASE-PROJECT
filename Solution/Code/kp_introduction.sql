@@ -274,3 +274,9 @@ VALUES ('2022-03-14', 50.00, 'paid', 'delivered', 1),
        ('2022-04-27', 83.00, 'paid', 'delivered', 48),
 	   ('2022-04-28', 83.00, 'paid', 'delivered', 49),
        ('2022-04-28', 83.00, 'paid', 'delivered', 50);
+       
+INSERT INTO category
+VALUES (NULL, 'Pop'),
+       (NULL ,'Hip-hop'),
+       (NULL, 'Jazz'),
+       (NULL, 'Rock');
