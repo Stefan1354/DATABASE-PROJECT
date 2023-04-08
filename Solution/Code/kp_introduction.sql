@@ -269,13 +269,64 @@ VALUES ('2022-03-14', 50.00, 'paid', 'delivered', 1),
        ('2022-04-25', 96.00, 'paid', 'delivered', 45),
        ('2022-04-26', 78.00, 'paid', 'delivered', 46),
        ('2022-04-26', 91.00, 'not paid', 'not delivered', 47),
-       ('2022-04-27', 83.00, 'paid', 'delivered', 48);
+       ('2022-04-27', 83.00, 'paid', 'delivered', 48),
+       ('2022-04-27', 83.00, 'paid', 'delivered', 48),
+       ('2022-04-27', 83.00, 'paid', 'delivered', 48),
+       ('2022-04-27', 83.00, 'paid', 'delivered', 49),
+       ('2022-04-27', 83.00, 'paid', 'delivered', 50);
+       
        
 INSERT INTO category
 VALUES (NULL, 'Pop'),
        (NULL ,'Hip-hop'),
        (NULL, 'Jazz'),
        (NULL, 'Rock');
+       
+INSERT INTO performer(id, name, egn, address, dateOfBirth, genre)
+VALUES (NULL, 'Drake', '9124656742', '111 Pine St San Francisco, CA 94111', '1986-10-24', 'Trap'),
+       (NULL, 'Future', '9219309213', '456 Oak Ave Springfield, USA', '1990-02-16', 'Hip hop'),
+       (NULL, 'Jimmy Page', '9029831092', '1111 Maple Ln Anytown, USA', '1944-01-09', 'Classic rock'),
+       (NULL, 'Ed Sheeran', '2909719423', '9999 Cedar Dr Anytown, USA', '1991-02-17', 'Dancehall'),
+       (NULL, 'Robert Plant', '9432008792', '1818 Maple Blvd Anytown, USA', '1948-08-20', 'Classic rock'),
+       (NULL, 'John Bonham', '8793201034', '1919 Birch St Springfield, USA', '1948-05-31', 'Classic rock'),
+       (NULL, 'John Paul Jones', '2907980123', '2525 Pine Ln Springfield, USA', '1946-01-03', 'Bebop'),
+       (NULL, 'Lil Nas X', '9908978213', '2020 Pine Dr Anytown, USA', '1999-04-09', 'Trap'),
+       (NULL, 'Michael Jackson', '8909234560', '2222 Oak Ave Anytown, USA', '1958-08-29', 'Funk'),
+       (NULL, 'Miles Davis', '3202428290', '5555 Pine Ln Anytown, USA', '1926-05-26', 'Bebop'),
+       (NULL, 'Drake', '9123456782', '111 Pine St San Francisco, CA 94111', '1986-10-24', 'Trap'),
+       (NULL, 'Lady Gaga', '3219087210', '1111 Maple Ln Anytown, USA', '1986-03-28', 'Pop rock'),
+       (NULL, 'Bradley Cooper', '4321678902', '2345 Oak Rd Springfield, USA', '1975-01-05', 'Pop-rock'),
+       (NULL, 'Macklemore', '4545009877', '6767 Cedar Rd Anytown, USA', '1983-06-19', 'Pop rap'),
+       (NULL, 'Rylan Lewis', '0908012312', '9090 Birch Ave Springfield, USA', '1988-03-25', 'Pop rap'),
+       (NULL, 'Wanz', '0205383290', '2727 Oak St Springfield, USA', '1961-10-09', 'Pop rap'),
+       (NULL, 'John Legend', '3402921045', '2424 Birch Ct Anytown, USA', '1978-12-28', 'Soul'),
+       (NULL, 'Ed Sheeran', '2909219321', '9999 Cedar Dr Anytown, USA', '1991-02-17', 'Pop ballad'),
+       (NULL, 'John Coltrane', '3003210981', '7878 Oak Ln Springfield, USA', '1926-09-23', 'Swing'),
+       (NULL, 'Desiigner', '3053210991', '7878 Oak Ln Springfield, USA', '1926-09-23', 'Swing');
+       
+       
+INSERT INTO albums
+VALUES (NULL, 'High Off Life', 21, 80.20, '2020-05-15', 'Republic Records', 1),
+	   (NULL, 'After Hours', 14, 56.50, '2020-03-20', 'XO, Republic Records', 2),
+       (NULL, 'Led Zeppelin IV', 8, 42.39, '1971-11-08', 'Atlantic Records', 3),
+       (NULL, 'Divide', 11, 50.13, '2017-03-03', 'Asylum', 4),
+       (NULL, 'Thriller', 9, 42.19, '1982-11-30', 'Epic Records', 5),
+       (NULL, 'Kind of Blue', 5, 45.44, '1959-08-17', 'Columbia Records', 6),
+       (NULL, 'Nothing Was the Same', 13, 59.22, '2013-09-24', 'OVO, Republic Records', 1),
+	   (NULL, 'Born This Way', 14, 61.24, '2011-05-23', 'Streamline, Kon Live, Interscope', 8),
+       (NULL, 'A Star Is Born Soundtrack', 34, 65.56, '2018-10-05', 'Interscope Records', 9),
+       (NULL, 'GEMINI', 16, 60.13, '2017-09-22', 'Bendo LLC', 14),
+       (NULL, 'The Fall Off', 14, 56.25, '2010-12-25', 'Dreamville, Roc Nation, Interscope Records', 15),
+	   (NULL, 'The Orange Room', 15, 55.29, '2005-03-01', 'Sheeran Lock', 18),
+       (NULL, 'To Pimp a Butterfly', 16, 78.49, '2015-03-16', 'Top Dawg Entertainment', 13),
+       (NULL, 'DAMN.', 14, 55.07, '2017-04-14', 'Top Dawg Entertainment', 13),
+       (NULL, 'Innervisions', 9, 43.18, '1973-08-03', 'Tamla Records', 14),
+       (NULL, 'Songs in the Key of Life', 21, 100.53, '1976-09-28', 'Tamla Records', 14),
+	   (NULL, 'Montero', 15, 43.29, '2021-09-17', 'Columbia Records', 7),
+       (NULL, 'Thriller', 9, 42.19, '1982-11-30', 'Epic Records', 8),
+       (NULL, 'Kind of Blue', 5, 45.52, '1959-08-17', 'Columbia Records', 9),
+       (NULL, 'Scorpion', 25, 89.04, '2018-06-29', 'Cash Money Records', 1),
+       (NULL, 'A Star is Born', 19, 66.14, '2018-10-05', 'Interscope Records', 8);
        
 INSERT INTO song 
 VALUES (NULL, 'Life Is Good', 'https://www.youtube.com/watch?v=l0U7SxXHkPY', 'Pop', 'Trap', 'Duo', 237, 2100050978, 2, 1, 1),
@@ -298,45 +349,24 @@ VALUES (NULL, 'Life Is Good', 'https://www.youtube.com/watch?v=l0U7SxXHkPY', 'Po
        (NULL, 'Bohemian Rhapsody', 'https://www.youtube.com/watch?v=fJ9rUzIMcZQ', 'Rock', 'Progressive rock', 'Band', 356, 1789980980, 8, 4, 3),
        (NULL, 'November Rain', 'https://www.youtube.com/watch?v=8SbUC-UaAxE', 'Rock', 'Power ballad', 'Band', 537, 2894090878, 10, 4, 6),
        (NULL, 'Despacito', 'https://www.youtube.com/watch?v=kJQP7kiw5Fk', 'Pop', 'Latin pop', 'Duo', 228, 6752000000, 11, 1, 14),
-       (NULL, 'Girls Like You', 'https://www.youtube.com/watch?v=aJOTlE1K90k', 'Pop', 'Pop rock', 'Group', 259, 3526000000, 12, 11),
-       (NULL, 'All of Me', 'https://www.youtube.com/watch?v=450p7goxZqg', 'Pop', 'R&B', 'Solo', 269, 9867000, 13, 11),
-       (NULL, 'Believer', 'https://www.youtube.com/watch?v=7wtfhZwyrcc', 'Rock', 'Alternative rock', 'Group', 204000, 7345, 14, 14),
-       (NULL, 'Sweet Child o Mine', 'https://www.youtube.com/watch?v=1w7OgIMMRc4', 'Rock', 'Hard rock', 'Band', 355090, 8762, 15, 4),
-       (NULL, 'I Love You', 'https://www.youtube.com/watch?v=VGyT3gOxlcg', 'Pop', 'Pop ballad', 'Solo', 263, 54210, 16, 1),
-       (NULL, 'Counting Stars', 'https://www.youtube.com/watch?v=hT_nvWreIhg', 'Pop', 'Pop rock', 'Group', 257, 92684, 17, 1),
-       (NULL, 'Take Five', 'https://www.youtube.com/watch?v=vmDDOFXSgAs', 'Jazz', 'Cool Jazz', 'Saxophone Quartet', 173000, 21200000, 1, 3),
-       (NULL, 'All Blues', 'https://www.youtube.com/watch?v=-488UORrfJ0', 'Jazz', 'Modal Jazz', 'Sextet', 663, 13000000, 2, 2, 8),
+       (NULL, 'Girls Like You', 'https://www.youtube.com/watch?v=aJOTlE1K90k', 'Pop', 'Pop rock', 'Group', 259, 3526000000, 12, 1, 15),
+       (NULL, 'All of Me', 'https://www.youtube.com/watch?v=450p7goxZqg', 'Pop', 'R&B', 'Solo', 269, 9867000, 13, 1, 9),
+       (NULL, 'Believer', 'https://www.youtube.com/watch?v=7wtfhZwyrcc', 'Rock', 'Alternative rock', 'Group', 204, 73450000, 14, 4, 14),
+       (NULL, 'Sweet Child o Mine', 'https://www.youtube.com/watch?v=1w7OgIMMRc4', 'Rock', 'Hard rock', 'Band', 355, 876200000, 15, 4, 12),
+       (NULL, 'I Love You', 'https://www.youtube.com/watch?v=VGyT3gOxlcg', 'Pop', 'Pop ballad', 'Solo', 263, 542100000, 16, 1, 18),
+       (NULL, 'Counting Stars', 'https://www.youtube.com/watch?v=hT_nvWreIhg', 'Pop', 'Pop rock', 'Group', 257, 92684, 17, 1, 9),
+       (NULL, 'Take Five', 'https://www.youtube.com/watch?v=vmDDOFXSgAs', 'Jazz', 'Cool Jazz', 'Saxophone Quartet', 300, 21200000, 1, 3, 10),
+       (NULL, 'All Blues', 'https://www.youtube.com/watch?v=-488UORrfJ0', 'Jazz', 'Modal Jazz', 'Sextet', 663, 13000000, 2, 3, 8),
        (NULL, 'In a Sentimental Mood', 'https://www.youtube.com/watch?v=r594pxUjcz4', 'Jazz', 'Swing', 'Trio', 401, 5000000, 3, 3, 12),
-       (NULL, 'Smells Like Teen Spirit', 'https://www.youtube.com/watch?v=hTWKbfoikeg', 'Rock', 'Grunge', 'Electric', 210000000, 1, 32, 4),
-       (NULL, 'Livin on a Prayer', 'https://www.youtube.com/watch?v=lDK9QqIzhwk', 'Rock', 'Pop Rock', 'Electric', 24600000, 1090909, 42, 4),
-       (NULL, 'Sweet Child o Mine', 'https://www.youtube.com/watch?v=1w7OgIMMRc4', 'Rock', 'Hard Rock', 'Electric', 348000000, 1, 38, 4),
+       (NULL, 'Smells Like Teen Spirit', 'https://www.youtube.com/watch?v=hTWKbfoikeg', 'Rock', 'Grunge', 'Electric', 210, 210000210, 1, 4, 4),
+       (NULL, 'Livin on a Prayer', 'https://www.youtube.com/watch?v=lDK9QqIzhwk', 'Rock', 'Pop Rock', 'Electric', 246, 246000246, 42, 4, 9),
+       (NULL, 'Sweet Child o Mine', 'https://www.youtube.com/watch?v=1w7OgIMMRc4', 'Rock', 'Hard Rock', 'Electric', 129, 348000000, 1, 4, 4),
        (NULL, 'Thunderstruck', 'https://www.youtube.com/watch?v=v2AC41dglnM', 'Rock', 'Heavy metal', 'Blues rock', 292, 700000, 11, 4, 5),
        (NULL, 'Wish You Were Here', 'https://www.youtube.com/watch?v=IXdNnw99-Ic', 'Rock', 'Progressive Rock', 'Acoustic', 334, 1500000, 12, 4, 5),
        (NULL, 'Satisfaction', 'https://www.youtube.com/watch?v=nrIPxlFzDi0', 'Rock', 'Hard rock', 'Guitar, bass, drums, vocals', 218, 103500000, 1, 4, 6),
        (NULL ,'Shape Of You', 'https://www.youtube.com/watch?v=JGwWNGJdvx8', 'Dancehall', 'Hip-hop', 'Tropical House', 263, 5900000, 3, 2, 5);
        
     
-INSERT INTO performer(id, name, egn, address, dateOfBirth, genre)
-VALUES (NULL, 'Drake', '9124656742', '111 Pine St San Francisco, CA 94111', '1986-10-24', 'Trap'),
-       (NULL, 'Future', '9219309213', '456 Oak Ave Springfield, USA', '1990-02-16', 'Hip hop'),
-       (NULL, 'Jimmy Page', '9029831092', '1111 Maple Ln Anytown, USA', '1944-01-09', 'Classic rock'),
-       (NULL, 'Ed Sheeran', '2909719423', '9999 Cedar Dr Anytown, USA', '1991-02-17', 'Dancehall'),
-       (NULL, 'Robert Plant', '9432008792', '1818 Maple Blvd Anytown, USA', '1948-08-20', 'Classic rock'),
-       (NULL, 'John Bonham', '8793201034', '1919 Birch St Springfield, USA', '1948-05-31', 'Classic rock'),
-       (NULL, 'John Paul Jones', '2907980123', '2525 Pine Ln Springfield, USA', '1946-01-03', 'Bebop'),
-       (NULL, 'Lil Nas X', '9908978213', '2020 Pine Dr Anytown, USA', '1999-04-09', 'Trap'),
-       (NULL, 'Michael Jackson', '8909234560', '2222 Oak Ave Anytown, USA', '1958-08-29', 'Funk'),
-       (NULL, 'Miles Davis', '3202428290', '5555 Pine Ln Anytown, USA', '1926-05-26', 'Bebop'),
-       (NULL, 'Drake', '9123456782', '111 Pine St San Francisco, CA 94111', '1986-10-24', 'Trap'),
-       (NULL, 'Lady Gaga', '3219087210', '1111 Maple Ln Anytown, USA', '1986-03-28', 'Pop rock'),
-       (NULL, 'Bradley Cooper', '4321678902', '2345 Oak Rd Springfield, USA', '1975-01-05', 'Pop-rock'),
-       (NULL, 'Macklemore', '4545009877', '6767 Cedar Rd Anytown, USA', '1983-06-19', 'Pop rap'),
-       (NULL, 'Rylan Lewis', '0908012312', '9090 Birch Ave Springfield, USA', '1988-03-25', 'Pop rap'),
-       (NULL, 'Wanz', '0205383290', '2727 Oak St Springfield, USA', '1961-10-09', 'Pop rap'),
-       (NULL, 'John Legend', '3402921045', '2424 Birch Ct Anytown, USA', '1978-12-28', 'Soul'),
-       (NULL, 'Ed Sheeran', '2909219321', '9999 Cedar Dr Anytown, USA', '1991-02-17', 'Pop ballad'),
-       (NULL, 'John Coltrane', '3003210981', '7878 Oak Ln Springfield, USA', '1926-09-23', 'Swing');
-
 INSERT INTO reviews
 VALUES (NULL, 8.5, 'Awesome song, love the guitar solo!', '2022-03-28', 1, 1),
        (NULL, 6.2, 'Not my favorite song, but still decent', '2022-03-29', 2, 1),
@@ -361,28 +391,6 @@ VALUES (NULL, 8.5, 'Awesome song, love the guitar solo!', '2022-03-28', 1, 1),
        (NULL, 7.3, 'Decent song, but not too memorable', '2022-04-04', 12, 11),
        (NULL, 7.0, 'Average song, nothing really stood out', '2022-04-07', 18, 17);
        
-INSERT INTO albums
-VALUES (NULL, 'Take Care', 14, 80.20, '2011-11-15', 'Republic Records', 1),
-	   (NULL, 'After Hours', 14, 56.50, '2020-03-20', 'XO, Republic Records', 2),
-       (NULL, 'Led Zeppelin IV', 8, 42.39, '1971-11-08', 'Atlantic Records', 3),
-       (NULL, 'Divide', 11, 50.13, '2017-03-03', 'Asylum', 4),
-       (NULL, 'Thriller', 9, 42.19, '1982-11-30', 'Epic Records', 5),
-       (NULL, 'Kind of Blue', 5, 45.44, '1959-08-17', 'Columbia Records', 6),
-       (NULL, 'Nothing Was the Same', 13, 59.22, '2013-09-24', 'OVO, Republic Records', 1),
-	   (NULL, 'Born This Way', 14, 61.24, '2011-05-23', 'Streamline, Kon Live, Interscope', 8),
-       (NULL, 'A Star Is Born Soundtrack', 34, 65.56, '2018-10-05', 'Interscope Records', 9),
-       (NULL, 'GEMINI', 16, 60.13, '2017-09-22', 'Bendo LLC', 14),
-       (NULL, 'The Fall Off', 14, 56.25, '2010-12-25', 'Dreamville, Roc Nation, Interscope Records', 15),
-	   (NULL, 'The Orange Room', 15, 55.29, '2005-03-01', 'Sheeran Lock', 18),
-       (NULL, 'To Pimp a Butterfly', 16, 78.49, '2015-03-16', 'Top Dawg Entertainment', 13),
-       (NULL, 'DAMN.', 14, 55.07, '2017-04-14', 'Top Dawg Entertainment', 13),
-       (NULL, 'Innervisions', 9, 43.18, '1973-08-03', 'Tamla Records', 14),
-       (NULL, 'Songs in the Key of Life', 21, 100.53, '1976-09-28', 'Tamla Records', 14),
-	   (NULL, 'Montero', 15, 43.29, '2021-09-17', 'Columbia Records', 7),
-       (NULL, 'Thriller', 9, 42.19, '1982-11-30', 'Epic Records', 8),
-       (NULL, 'Kind of Blue', 5, 45.52, '1959-08-17', 'Columbia Records', 9),
-       (NULL, 'Scorpion', 25, 89.04, '2018-06-29', 'Cash Money Records', 1),
-       (NULL, 'A Star is Born', 19, 66.14, '2018-10-05', 'Interscope Records', 8);
     
 INSERT INTO sales 
 VALUES(NULL, '2022-03-14', 10.99, 1, 1),
@@ -421,28 +429,3 @@ VALUES (1, 1),
        (8, 18),
        (9, 18);
 /*редове 411+412  и 421+422  ->  една песен може да бъде изпълнявана от повече от един изпълнител*/
-
-
-INSERT INTO composer_songs (composer_id, song_id) 
-VALUES (1, 1),
-       (1, 2),
-       (2, 1),
-       (3, 2),
-       (4, 2),
-       (5, 4),
-       (10, 5),
-       (10, 8),
-       (20, 10),
-       (25, 10),
-       (15, 7),
-       (15, 13);
-/*редове 427+428  и  433+434  ->  една песен може да бъде написана от повече от един композитор*/       
-       
-       
-INSERT INTO composer_albums (composer_id, album_id)
-VALUES (1, 1),
-       (1, 2),
-       (2, 2),
-       (3, 3),
-       (4, 3);
-       
