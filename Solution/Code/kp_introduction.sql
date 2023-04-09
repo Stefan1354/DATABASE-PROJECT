@@ -456,29 +456,35 @@ VALUES (1, 1),
        (3, 3),
        (4, 3);
        
+/*TEST QUERIES*/
+       
+       
 /*Напишете заявка, с която извеждате всички песни, които са написани от даден композитор, заедно с информация за композитора:*/
-/*SELECT song.name AS songName, composer.name AS composerName, composer.egn AS EGN, composer.nationality AS nationality, composer.phone AS MPhone, composer.dateOfBirth AS dateOfBirth
+SELECT song.name AS songName, composer.name AS composerName, composer.egn AS EGN, composer.nationality AS nationality, composer.phone AS MPhone, composer.dateOfBirth AS dateOfBirth
 FROM song JOIN composer_songs ON
 song.id = composer_songs.song_id
 JOIN composer ON composer_songs.composer_id = composer.id
-WHERE composer.id = 1;*/
+WHERE composer.id = 1;
        
        
 /*Напишете заявка, с която извеждате всички песни, които са написани от повече от един композитор, като са подредени в азбучен ред по заглавие:*/
-/*SELECT song.name AS nameOfSong
+SELECT song.name AS nameOfSong
 FROM song
 LEFT JOIN composer_songs ON song.id = composer_songs.song_id
 GROUP BY song.id
 HAVING COUNT(composer_songs.composer_id) > 1
-ORDER BY song.name ASC;*/
+ORDER BY song.name ASC;
+
 
 /*Напишете заявка с която извеждате всички продажби, направени на 18 март 2022 година, 
 като покажете и информацията за песните и албумите, които са били закупени:*/
 
-/*SELECT sales.id, sales.sale_price AS price, song.name AS nameOfSong, song.link, albums.title, albums.record_label
+
+SELECT sales.id, sales.sale_price AS price, song.name AS nameOfSong, song.link, albums.title, albums.record_label
 FROM sales JOIN song ON sales.song_id = song.id
 JOIN albums ON song.album_id = albums.id
-WHERE sales.sale_date = '2022-03-14';*/
+WHERE sales.sale_date = '2022-03-14';
+
 
 /*Напиишете заявка, с която извеждате броя на продажбите и общата им стойност за всеки албум*/
 SELECT albums.title, COUNT(sales.id) AS sales_count, SUM(sales.sale_price) AS total_sales
@@ -490,6 +496,7 @@ LEFT JOIN song ON song.id = composer_songs.song_id
 LEFT JOIN sales ON sales.song_id = song.id
 GROUP BY albums.title
 HAVING COUNT(sales.id) > 0;
+
 
 /*Напишете заявка, с която извеждате броя на продажбите и общата им стойност за всеки изпълнител:*/
 SELECT performer.name, COUNT(sales.id) AS sales_count, SUM(sales.sale_price) AS total_sales
