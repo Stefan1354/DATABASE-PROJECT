@@ -2,9 +2,7 @@ DROP DATABASE IF EXISTS test_project;
 CREATE DATABASE test_project;
 USE test_project;
 
-/*da obmislq za user-ite da mojat da poruchat albumi, i da mojat da se pravat playlisti, ne da poruchat pesen po pesen
-order_id da izhuvrlq
-tablicata category i genre da obmislq, neka da bude CREATE TABLE genre (category i genre sa ednakvi)*/
+/*da obmislq za user-ite da mojat da poruchat albumi, i da mojat da se pravat playlisti, ne da poruchat pesen po pesen*/
 
 CREATE TABLE composer (
 id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
