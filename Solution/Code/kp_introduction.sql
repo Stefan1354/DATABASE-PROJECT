@@ -4,6 +4,7 @@ USE test_project;
 
 /*da obmislq za user-ite da mojat da poruchat albumi, i da mojat da se pravat playlisti, ne da poruchat pesen po pesen*/
 
+
 CREATE TABLE composer (
 id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 name VARCHAR(255) NOT NULL,
@@ -32,14 +33,6 @@ userRole_id INT UNSIGNED NOT NULL,
 CONSTRAINT FOREIGN KEY (userRole_id) REFERENCES userRole(id)
 );
 
-CREATE TABLE playlists (  /*плейлисти на потребителите*/
-id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-name VARCHAR(255) NOT NULL,
-songCount INT UNSIGNED NOT NULL,  /*брой на песните в плейлистата*/
-user_id INT UNSIGNED NOT NULL, /*всеки потребител може да си прави плейлисти*/
-CONSTRAINT FOREIGN KEY (user_id) REFERENCES user(id)
-);
-
 
 CREATE TABLE orders (
 id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
@@ -49,6 +42,17 @@ payment_status VARCHAR(100) NOT NULL,    /*статус на плащането*
 delivery_status VARCHAR(100) NOT NULL,   /*статус на доставката*/
 user_id INT UNSIGNED NOT NULL,
 CONSTRAINT FOREIGN KEY (user_id) REFERENCES user(id)
+);
+
+
+CREATE TABLE playlists (  /*плейлисти на потребителите*/
+id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+name VARCHAR(255) NOT NULL,
+songCount INT UNSIGNED NOT NULL,  /*брой на песните в плейлистата*/
+user_id INT UNSIGNED NOT NULL, /*всеки потребител може да си прави плейлисти*/
+order_id INT UNSIGNED NOT NULL, /*в една поръчка можем да имаме много плейлисти*/
+CONSTRAINT FOREIGN KEY (user_id) REFERENCES user(id),
+CONSTRAINT FOREIGN KEY (order_id) REFERENCES orders(id)
 );
 
 
@@ -89,9 +93,9 @@ style VARCHAR(100) NOT NULL,
 arrangement VARCHAR(100) NOT NULL,
 duration INT UNSIGNED NOT NULL,
 numberOfViews BIGINT UNSIGNED NOT NULL,   /*брой на гледания на песента в платформата Youtube*/
-category_id INT UNSIGNED NOT NULL,
+genre_id INT UNSIGNED NOT NULL,
 album_id INT UNSIGNED NOT NULL,
-CONSTRAINT FOREIGN KEY (category_id) REFERENCES category(id),
+CONSTRAINT FOREIGN KEY (genre_id) REFERENCES genre(id),
 CONSTRAINT FOREIGN KEY (album_id) REFERENCES albums(id)
 );
 
@@ -125,12 +129,22 @@ CONSTRAINT FOREIGN KEY (performer_id) REFERENCES performer(id),
 CONSTRAINT FOREIGN KEY (song_id) REFERENCES song(id)
 );
 
-CREATE TABLE performer_genre (
+
+CREATE TABLE performer_genre ( /*кои жанрове изпълнява даден изпълнител*/
 performer_id INT UNSIGNED NOT NULL,
 genre_id INT UNSIGNED NOT NULL,
 CONSTRAINT FOREIGN KEY (performer_id) REFERENCES performer(id),
 CONSTRAINT FOREIGN KEY (genre_id) REFERENCES genre(id)
 );
+
+
+CREATE TABLE song_genre ( /*една песен може да принадлежи на повече жанра и обратно*/
+song_id INT UNSIGNED NOT NULL,
+genre_id INT UNSIGNED NOT NULL,
+CONSTRAINT FOREIGN KEY (song_id) REFERENCES song(id),
+CONSTRAINT FOREIGN KEY (genre_id) REFERENCES genre(id)
+);
+
 
 CREATE TABLE composer_songs (
 composer_id INT UNSIGNED NOT NULL,
@@ -149,6 +163,8 @@ CONSTRAINT FOREIGN KEY (album_id) REFERENCES albums(id),
 PRIMARY KEY (composer_id, album_id)
 );
 
+
+
 CREATE TABLE album_genre (
 album_id INT UNSIGNED NOT NULL,
 genre_id INT UNSIGNED NOT NULL,
@@ -156,18 +172,20 @@ CONSTRAINT FOREIGN KEY (album_id) REFERENCES albums(id),
 CONSTRAINT FOREIGN KEY (genre_id) REFERENCES genre(id)
 );
 
-CREATE TABLE user_album (
-user_id INT UNSIGNED NOT NULL,
-album_id INT UNSIGNED NOT NULL,
-CONSTRAINT FOREIGN KEY (user_id) REFERENCES user(id),
-CONSTRAINT FOREIGN KEY (album_id) REFERENCES album(id)
-);
 
 CREATE TABLE playlist_album (
 playlist_id INT UNSIGNED NOT NULL,
 album_id INT UNSIGNED NOT NULL,
-CONSTRAINT FOREIGN KEY (playlist_id) REFERENCES playlist(id),
-CONSTRAINT FOREIGN KEY (album_id) REFERENCES album(id)
+CONSTRAINT FOREIGN KEY (playlist_id) REFERENCES playlists(id),
+CONSTRAINT FOREIGN KEY (album_id) REFERENCES albums(id)
+);
+
+
+CREATE TABLE user_album ( /*потребителите могат да поръчат и албуми*/
+user_id INT UNSIGNED NOT NULL,
+album_id INT UNSIGNED NOT NULL,
+CONSTRAINT FOREIGN KEY (user_id) REFERENCES user(id),
+CONSTRAINT FOREIGN KEY (album_id) REFERENCES albums(id)
 );
 
 
