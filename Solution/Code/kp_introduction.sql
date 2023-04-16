@@ -2,8 +2,12 @@ DROP DATABASE IF EXISTS test_project;
 CREATE DATABASE test_project;
 USE test_project;
 
+/*da obmislq za user-ite da mojat da poruchat albumi, i da mojat da se pravat playlisti, ne da poruchat pesen po pesen
+order_id da izhuvrlq
+tablicata category i genre da obmislq, neka da bude CREATE TABLE genre (category i genre sa ednakvi)*/
+
 CREATE TABLE composer (
-id INT AUTO_INCREMENT PRIMARY KEY,
+id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 name VARCHAR(255) NOT NULL,
 egn CHAR(10) NOT NULL UNIQUE,
 nationality VARCHAR(255) NOT NULL,
@@ -13,76 +17,83 @@ dateOfBirth DATE NOT NULL
 
 
 CREATE TABLE userRole (
-id INT AUTO_INCREMENT PRIMARY KEY,
+id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 name VARCHAR(255) NOT NULL
 );
 
 
 CREATE TABLE user (
-id INT AUTO_INCREMENT PRIMARY KEY,
+id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 username VARCHAR(255) NOT NULL,
 password VARCHAR(255) NOT NULL,
 egn CHAR(10) NOT NULL UNIQUE,
 address VARCHAR(255) NOT NULL,
 phone VARCHAR(30) NULL DEFAULT NULL,
 isAdmin BOOLEAN DEFAULT false,
-userRole_id INT NOT NULL,
+userRole_id INT UNSIGNED NOT NULL,
 CONSTRAINT FOREIGN KEY (userRole_id) REFERENCES userRole(id)
 );
 
-
-CREATE TABLE orders (
-id INT AUTO_INCREMENT PRIMARY KEY,
-order_date DATE NOT NULL,                /*дата на поръчката*/
-price DECIMAL(6,2) NOT NULL,             /*общата цена на поръчката*/
-payment_status VARCHAR(100) NOT NULL,    /*статус на плащането*/
-delivery_status VARCHAR(100) NOT NULL,   /*статус на доставката*/
-user_id INT NOT NULL,
+CREATE TABLE playlists (  /*плейлисти на потребителите*/
+id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+name VARCHAR(255) NOT NULL,
+songCount INT UNSIGNED NOT NULL,  /*брой на песните в плейлистата*/
+user_id INT UNSIGNED NOT NULL,
 CONSTRAINT FOREIGN KEY (user_id) REFERENCES user(id)
 );
 
 
-CREATE TABLE category (                        /*в тази таблица ще съхраняваме категориите на песните в сайта*/
-id INT AUTO_INCREMENT PRIMARY KEY,
+CREATE TABLE orders (
+id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+order_date DATE NOT NULL,                /*дата на поръчката*/
+price DECIMAL(6,2) NOT NULL,             /*общата цена на поръчката*/
+payment_status VARCHAR(100) NOT NULL,    /*статус на плащането*/
+delivery_status VARCHAR(100) NOT NULL,   /*статус на доставката*/
+user_id INT UNSIGNED NOT NULL,
+CONSTRAINT FOREIGN KEY (user_id) REFERENCES user(id)
+);
+
+
+CREATE TABLE genre (                        /*в тази таблица ще съхраняваме жанровете на песните в сайта*/
+id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 name VARCHAR(255) NOT NULL
 );
 
 
 CREATE TABLE performer (
-id INT AUTO_INCREMENT PRIMARY KEY,
+id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 name VARCHAR(255) NOT NULL,
 egn CHAR(10) NOT NULL UNIQUE,
 address VARCHAR(255) NOT NULL,
 phone VARCHAR(30) NULL DEFAULT NULL,
-dateOfBirth DATE NOT NULL,
-genre VARCHAR(100) NOT NULL  /*жанр на музиката, която изпълнява изпълнителя*/
+dateOfBirth DATE NOT NULL
 );
 
 
 CREATE TABLE albums (
-id INT AUTO_INCREMENT PRIMARY KEY,
+id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 title VARCHAR(255) NOT NULL,
 numberOfSongs INT NOT NULL,
 length DECIMAL(6,2),                /*дължината на всички песни в минути и секунди*/
 release_date DATE NOT NULL,
 record_label VARCHAR(255) NOT NULL,  /*музикален издател или звукозаписна компания*/
-performer_id INT NOT NULL,
+performer_id INT UNSIGNED NOT NULL,
 CONSTRAINT FOREIGN KEY (performer_id) REFERENCES performer(id)
 );
-
+/*vseki user da si pravi plailisti*/
 
 CREATE TABLE song (
-id INT AUTO_INCREMENT PRIMARY KEY,
+id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 name VARCHAR(255) NOT NULL,
 link VARCHAR(255) NOT NULL,
 genre VARCHAR(100) NOT NULL,
 style VARCHAR(100) NOT NULL,
 arrangement VARCHAR(100) NOT NULL,
-duration INT NOT NULL,
-numberOfViews BIGINT NOT NULL,     /*брой на гледания на песента в платформата Youtube*/
-order_id INT NOT NULL,
-category_id INT NOT NULL,
-album_id INT NOT NULL,
+duration INT UNSIGNED NOT NULL,
+numberOfViews BIGINT UNSIGNED NOT NULL,   /*брой на гледания на песента в платформата Youtube*/
+ /*da izpravq, edna pesen ne moje da e samo v edna poruchka, no v poveche*/
+category_id INT UNSIGNED NOT NULL,
+album_id INT UNSIGNED NOT NULL,
 CONSTRAINT FOREIGN KEY (order_id) REFERENCES orders(id),
 CONSTRAINT FOREIGN KEY (category_id) REFERENCES category(id),
 CONSTRAINT FOREIGN KEY (album_id) REFERENCES albums(id)
@@ -90,37 +101,44 @@ CONSTRAINT FOREIGN KEY (album_id) REFERENCES albums(id)
 
 
 CREATE TABLE reviews (
-id INT AUTO_INCREMENT PRIMARY KEY,
+id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 rating DECIMAL(10,2) NOT NULL,     /*рейтинг на песента между 0 и 10*/
 comment TEXT NOT NULL,             /*добавен коментар към рецензията*/
 review_date DATE NOT NULL,         /*дата на добавяне на рецензията*/
-user_id INT NOT NULL,
-song_id INT NOT NULL,
+user_id INT UNSIGNED NOT NULL,
+song_id INT UNSIGNED NOT NULL,
 CONSTRAINT FOREIGN KEY (user_id) REFERENCES user(id),
 CONSTRAINT FOREIGN KEY (song_id) REFERENCES song(id)
 );
 
 
 CREATE TABLE sales (
-id INT AUTO_INCREMENT PRIMARY KEY,
+id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 sale_date DATE NOT NULL,
 sale_price DECIMAL (10,2) NOT NULL,
-song_id INT NOT NULL,
-orders_id INT NOT NULL,
-CONSTRAINT FOREIGN KEY (song_id) REFERENCES song(id),
+album_id INT UNSIGNED NOT NULL, /*id na album, a ne pesen po pesen*/
+orders_id INT UNSIGNED NOT NULL,
+CONSTRAINT FOREIGN KEY (album_id) REFERENCES albums(id),
 CONSTRAINT FOREIGN KEY (orders_id) REFERENCES orders(id)
 );
 
 CREATE TABLE performer_song (
-performer_id INT NOT NULL,
-song_id INT NOT NULL,
+performer_id INT UNSIGNED NOT NULL,
+song_id INT UNSIGNED NOT NULL,
 CONSTRAINT FOREIGN KEY (performer_id) REFERENCES performer(id),
 CONSTRAINT FOREIGN KEY (song_id) REFERENCES song(id)
 );
 
+CREATE TABLE performer_genre (
+performer_id INT UNSIGNED NOT NULL,
+genre_id INT UNSIGNED NOT NULL,
+CONSTRAINT FOREIGN KEY (performer_id) REFERENCES performer(id),
+CONSTRAINT FOREIGN KEY (genre_id) REFERENCES genre(id)
+);
+
 CREATE TABLE composer_songs (
-composer_id INT NOT NULL,
-song_id INT NOT NULL,
+composer_id INT UNSIGNED NOT NULL,
+song_id INT UNSIGNED NOT NULL,
 CONSTRAINT FOREIGN KEY (composer_id) REFERENCES composer(id),
 CONSTRAINT FOREIGN KEY (song_id) REFERENCES song(id),
 PRIMARY KEY (composer_id, song_id)
@@ -128,25 +146,32 @@ PRIMARY KEY (composer_id, song_id)
 
 
 CREATE TABLE composer_albums (
-composer_id INT NOT NULL,
-album_id INT NOT NULL,
+composer_id INT UNSIGNED NOT NULL,
+album_id INT UNSIGNED NOT NULL,
 CONSTRAINT FOREIGN KEY (composer_id) REFERENCES composer(id),
 CONSTRAINT FOREIGN KEY (album_id) REFERENCES albums(id),
 PRIMARY KEY (composer_id, album_id)
 );
 
+CREATE TABLE album_genre (
+album_id INT UNSIGNED NOT NULL,
+genre_id INT UNSIGNED NOT NULL,
+CONSTRAINT FOREIGN KEY (album_id) REFERENCES albums(id),
+CONSTRAINT FOREIGN KEY (genre_id) REFERENCES genre(id)
+);
+
 
 INSERT INTO composer (id, name, egn, nationality, phone, dateOfBirth)
 VALUES (NULL, 'Ludovico Einaudi', '1020104305', 'Italy', '+39023234567', '1955-11-23'),
-       (NULL, 'Max Richter', '2109060273', 'Germany', '+49224567890', '1966-03-22'),
-       (NULL, 'Jóhann Jóhannsson', '1203040705', 'Iceland', '+3541234567', '1969-09-19'),
-       (NULL, 'Hildur Guðnadóttir', '2104040404', 'Iceland', '+3542345678', '1982-09-04'),
-       (NULL, 'Nico Muhly', '2105050505', 'USA', '+12125551234', '1981-08-26'),
-       (NULL, 'Ólafur Arnalds', '1102065686', 'Iceland', '+3543456789', '1986-11-03'),
-       (NULL, 'Anna Meredith', '2107070707', 'UK', '+442079876543', '1978-12-17'),
+	   (NULL, 'Max Richter', '2109060273', 'Germany', '+49224567890', '1966-03-22'),
+	   (NULL, 'Jóhann Jóhannsson', '1203040705', 'Iceland', '+3541234567', '1969-09-19'),
+	   (NULL, 'Hildur Guðnadóttir', '2104040404', 'Iceland', '+3542345678', '1982-09-04'),
+	   (NULL, 'Nico Muhly', '2105050505', 'USA', '+12125551234', '1981-08-26'),
+	   (NULL, 'Ólafur Arnalds', '1102065686', 'Iceland', '+3543456789', '1986-11-03'),
+	   (NULL, 'Anna Meredith', '2107070707', 'UK', '+442079876543', '1978-12-17'),
        (NULL, 'Sarah Kirkland Snider', '2103050818', 'USA', '+12125678901', '1973-03-08'),
        (NULL, 'Meredith Monk', '2109490901', 'USA', '+12125671234', '1942-11-20'),
-       (NULL, 'Elena Kats-Chernin', '2110121315', 'Uzbekistan', '+61412345678', '1957-11-04'),
+	   (NULL, 'Elena Kats-Chernin', '2110121315', 'Uzbekistan', '+61412345678', '1957-11-04'),
        (NULL, 'Nathalie Joachim', '2107112134', 'USA', '+12125672345', '1983-06-20'),
        (NULL, 'Caroline Shaw', '9212101814', 'USA', '+12125673456', '1982-08-01'),
        (NULL, 'Tigran Hamasyan', '2509431303', 'Armenia', '+37411234567', '1987-07-17'),
@@ -166,7 +191,7 @@ VALUES (NULL, 'Administrator'),
        
 INSERT INTO user (id, username, password, egn, address, userRole_id)
 VALUES (NULL, 'John Wall', 'H@rdT0Gu3ss!', '9105010501', '123 Main Street', 2),
-       (NULL, 'Peter Bord', '5tr0ngP@55w0rd', '2301050501', 'Maple Drive 45', 2),
+	   (NULL, 'Peter Bord', '5tr0ngP@55w0rd', '2301050501', 'Maple Drive 45', 2),
        (NULL, 'Sam Anton', 'S3cur3L0g1n!', '8907010701', '312 Oak Avenue', 2),
        (NULL, 'Gordon Brown', 'C0mpl3xP@55', '6701020101', '39 Pine Street', 2),
        (NULL, 'Jack Monli', 'bo&sq!#sc1', '3401010301', 'Cedar Lane 78', 2),
@@ -308,22 +333,22 @@ VALUES (NULL, 'Drake', '9124656742', '111 Pine St San Francisco, CA 94111', '198
        
 INSERT INTO albums
 VALUES (NULL, 'High Off Life', 21, 80.20, '2020-05-15', 'Republic Records', 1),
-       (NULL, 'After Hours', 14, 56.50, '2020-03-20', 'XO, Republic Records', 2),
+	   (NULL, 'After Hours', 14, 56.50, '2020-03-20', 'XO, Republic Records', 2),
        (NULL, 'Led Zeppelin IV', 8, 42.39, '1971-11-08', 'Atlantic Records', 3),
        (NULL, 'Divide', 11, 50.13, '2017-03-03', 'Asylum', 4),
        (NULL, 'Thriller', 9, 42.19, '1982-11-30', 'Epic Records', 5),
        (NULL, 'Kind of Blue', 5, 45.44, '1959-08-17', 'Columbia Records', 6),
        (NULL, 'Nothing Was the Same', 13, 59.22, '2013-09-24', 'OVO, Republic Records', 1),
-       (NULL, 'Born This Way', 14, 61.24, '2011-05-23', 'Streamline, Kon Live, Interscope', 8),
+	   (NULL, 'Born This Way', 14, 61.24, '2011-05-23', 'Streamline, Kon Live, Interscope', 8),
        (NULL, 'A Star Is Born Soundtrack', 34, 65.56, '2018-10-05', 'Interscope Records', 9),
        (NULL, 'GEMINI', 16, 60.13, '2017-09-22', 'Bendo LLC', 14),
        (NULL, 'The Fall Off', 14, 56.25, '2010-12-25', 'Dreamville, Roc Nation, Interscope Records', 15),
-       (NULL, 'The Orange Room', 15, 55.29, '2005-03-01', 'Sheeran Lock', 18),
+	   (NULL, 'The Orange Room', 15, 55.29, '2005-03-01', 'Sheeran Lock', 18),
        (NULL, 'To Pimp a Butterfly', 16, 78.49, '2015-03-16', 'Top Dawg Entertainment', 13),
        (NULL, 'DAMN.', 14, 55.07, '2017-04-14', 'Top Dawg Entertainment', 13),
        (NULL, 'Innervisions', 9, 43.18, '1973-08-03', 'Tamla Records', 14),
        (NULL, 'Songs in the Key of Life', 21, 100.53, '1976-09-28', 'Tamla Records', 14),
-       (NULL, 'Montero', 15, 43.29, '2021-09-17', 'Columbia Records', 7),
+	   (NULL, 'Montero', 15, 43.29, '2021-09-17', 'Columbia Records', 7),
        (NULL, 'Thriller', 9, 42.19, '1982-11-30', 'Epic Records', 8),
        (NULL, 'Kind of Blue', 5, 45.52, '1959-08-17', 'Columbia Records', 9),
        (NULL, 'Scorpion', 25, 89.04, '2018-06-29', 'Cash Money Records', 1),
@@ -331,7 +356,7 @@ VALUES (NULL, 'High Off Life', 21, 80.20, '2020-05-15', 'Republic Records', 1),
        
 INSERT INTO song 
 VALUES (NULL, 'Life Is Good', 'https://www.youtube.com/watch?v=l0U7SxXHkPY', 'Pop', 'Trap', 'Duo', 237, 2100050978, 2, 1, 1),
-       (NULL, 'Blinding Lights', 'https://www.youtube.com/watch?v=4NRXx6U8ABQ', 'Pop', 'Synth-pop', 'Solo', 210, 987600000, 3, 1, 2),
+	   (NULL, 'Blinding Lights', 'https://www.youtube.com/watch?v=4NRXx6U8ABQ', 'Pop', 'Synth-pop', 'Solo', 210, 987600000, 3, 1, 2),
        (NULL, 'Stairway to Heaven', 'https://www.youtube.com/watch?v=QkF3oxziUI4', 'Rock', 'Classic rock', 'Band', 481000000, 5678, 5, 4, 2),
        (NULL, 'Old Town Road', 'https://www.youtube.com/watch?v=w2Ov5jzm3j8', 'Hip-hop', 'Country rap', 'Solo', 157, 345600000, 6, 2, 3),
        (NULL, 'Billie Jean', 'https://www.youtube.com/watch?v=Zi_XLOBDo_Y', 'Pop', 'Funk', 'Solo', 294, 123456432, 9, 1, 7),
@@ -339,7 +364,7 @@ VALUES (NULL, 'Life Is Good', 'https://www.youtube.com/watch?v=l0U7SxXHkPY', 'Po
        (NULL, 'In My Feelings', 'https://www.youtube.com/watch?v=DRS_PpOrUZ4', 'Hip-hop', 'Trap', 'Solo', 217, 89010987, 10, 2, 9),
        (NULL, 'Shallow', 'https://www.youtube.com/watch?v=bo_efYhYU2A', 'Pop', 'Pop rock', 'Duo', 215, 56780098, 12, 1, 12),
        (NULL, 'Thrift Shop', 'https://www.youtube.com/watch?v=QK8mJJJvaes', 'Hip-hop', 'Pop rap', 'Duo', 235, 345698098, 13, 2, 14),
-       (NULL, 'Sicko Mode', 'https://www.youtube.com/watch?v=6ONRf7h3Mdk', 'Hip-hop', 'Trap', 'Duo', 312, 45670000, 15, 2, 18),
+	   (NULL, 'Sicko Mode', 'https://www.youtube.com/watch?v=6ONRf7h3Mdk', 'Hip-hop', 'Trap', 'Duo', 312, 45670000, 15, 2, 18),
        (NULL, 'Sweet Child O Mine', 'https://www.youtube.com/watch?v=1w7OgIMMRc4', 'Rock', 'Hard rock', 'Band', 355, 1234000989, 16, 4, 20),
        (NULL, 'All of Me', 'https://www.youtube.com/watch?v=450p7goxZqg', 'Pop', 'Soul', 'Solo', 269, 89010909, 17, 1, 21),
        (NULL, 'Sorry', 'https://www.youtube.com/watch?v=fRh_vgS2dFE', 'Pop', 'Dance-pop', 'Group', 200, 723400000, 5, 1, 17),
@@ -395,7 +420,7 @@ VALUES (NULL, 8.5, 'Awesome song, love the guitar solo!', '2022-03-28', 1, 1),
     
 INSERT INTO sales 
 VALUES(NULL, '2022-03-14', 10.99, 1, 1),
-      (NULL, '2022-03-14', 9.99, 2, 2),
+	  (NULL, '2022-03-14', 9.99, 2, 2),
       (NULL, '2022-03-15', 8.99, 3, 3),
       (NULL, '2022-03-15', 7.99, 4, 4),
       (NULL, '2022-03-16', 6.99, 5, 5),
@@ -418,7 +443,7 @@ VALUES(NULL, '2022-03-14', 10.99, 1, 1),
 
 INSERT INTO performer_song
 VALUES (1, 1),
-       (2, 1),
+	   (2, 1),
        (3, 5),
        (4, 10),
        (5, 9),
@@ -430,7 +455,7 @@ VALUES (1, 1),
        (8, 18),
        (9, 18),
        (18, 36);
-/*редове 421+422  и 430+431  ->  една песен може да бъде изпълнявана от повече от един изпълнител*/
+/*редове 411+412  и 421+422  ->  една песен може да бъде изпълнявана от повече от един изпълнител*/
 
 
 INSERT INTO composer_songs (composer_id, song_id) 
@@ -446,7 +471,7 @@ VALUES (1, 1),
        (2, 10),
        (15, 7),
        (15, 13);
-/*редове 437+438  и  443+444  ->  една песен може да бъде написана от повече от един композитор*/       
+/*редове 427+428  и  433+434  ->  една песен може да бъде написана от повече от един композитор*/       
        
        
 INSERT INTO composer_albums (composer_id, album_id)
@@ -456,38 +481,32 @@ VALUES (1, 1),
        (3, 3),
        (4, 3);
        
-/*TEST QUERIES*/
-       
-       
 /*Напишете заявка, с която извеждате всички песни, които са написани от даден композитор, заедно с информация за композитора:*/
-SELECT song.name AS songName, composer.name AS composerName, composer.egn AS EGN, composer.nationality AS nationality, composer.phone AS MPhone, composer.dateOfBirth AS dateOfBirth
+/*SELECT song.name AS songName, composer.name AS composerName, composer.egn AS EGN, composer.nationality AS nationality, composer.phone AS MPhone, composer.dateOfBirth AS dateOfBirth
 FROM song JOIN composer_songs ON
 song.id = composer_songs.song_id
 JOIN composer ON composer_songs.composer_id = composer.id
-WHERE composer.id = 1;
+WHERE composer.id = 1;*/
        
        
 /*Напишете заявка, с която извеждате всички песни, които са написани от повече от един композитор, като са подредени в азбучен ред по заглавие:*/
-SELECT song.name AS nameOfSong
+/*SELECT song.name AS nameOfSong
 FROM song
 LEFT JOIN composer_songs ON song.id = composer_songs.song_id
 GROUP BY song.id
 HAVING COUNT(composer_songs.composer_id) > 1
-ORDER BY song.name ASC;
-
+ORDER BY song.name ASC;*/
 
 /*Напишете заявка с която извеждате всички продажби, направени на 18 март 2022 година, 
 като покажете и информацията за песните и албумите, които са били закупени:*/
 
-
-SELECT sales.id, sales.sale_price AS price, song.name AS nameOfSong, song.link, albums.title, albums.record_label
+/*SELECT sales.id, sales.sale_price AS price, song.name AS nameOfSong, song.link, albums.title, albums.record_label
 FROM sales JOIN song ON sales.song_id = song.id
 JOIN albums ON song.album_id = albums.id
-WHERE sales.sale_date = '2022-03-14';
-
+WHERE sales.sale_date = '2022-03-14';*/
 
 /*Напиишете заявка, с която извеждате броя на продажбите и общата им стойност за всеки албум*/
-SELECT albums.title, COUNT(sales.id) AS sales_count, SUM(sales.sale_price) AS total_sales
+/*SELECT albums.title, COUNT(sales.id) AS sales_count, SUM(sales.sale_price) AS total_sales
 FROM albums
 LEFT JOIN composer_albums ON composer_albums.album_id = albums.id
 LEFT JOIN composer ON composer.id = composer_albums.composer_id
@@ -495,13 +514,12 @@ LEFT JOIN composer_songs ON composer_songs.composer_id = composer.id
 LEFT JOIN song ON song.id = composer_songs.song_id
 LEFT JOIN sales ON sales.song_id = song.id
 GROUP BY albums.title
-HAVING COUNT(sales.id) > 0;
-
+HAVING COUNT(sales.id) > 0;*/
 
 /*Напишете заявка, с която извеждате броя на продажбите и общата им стойност за всеки изпълнител:*/
-SELECT performer.name, COUNT(sales.id) AS sales_count, SUM(sales.sale_price) AS total_sales
+/*SELECT performer.name, COUNT(sales.id) AS sales_count, SUM(sales.sale_price) AS total_sales
 FROM performer
 LEFT JOIN performer_song ON performer_song.performer_id = performer.id
 LEFT JOIN song ON song.id = performer_song.song_id
 LEFT JOIN sales ON sales.song_id = song.id
-GROUP BY performer.name;
+GROUP BY performer.name;*/
