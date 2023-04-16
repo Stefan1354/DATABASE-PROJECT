@@ -38,7 +38,7 @@ CREATE TABLE playlists (  /*плейлисти на потребителите*/
 id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 name VARCHAR(255) NOT NULL,
 songCount INT UNSIGNED NOT NULL,  /*брой на песните в плейлистата*/
-user_id INT UNSIGNED NOT NULL,
+user_id INT UNSIGNED NOT NULL, /*всеки потребител може да си прави плейлисти*/
 CONSTRAINT FOREIGN KEY (user_id) REFERENCES user(id)
 );
 
@@ -91,10 +91,8 @@ style VARCHAR(100) NOT NULL,
 arrangement VARCHAR(100) NOT NULL,
 duration INT UNSIGNED NOT NULL,
 numberOfViews BIGINT UNSIGNED NOT NULL,   /*брой на гледания на песента в платформата Youtube*/
- /*da izpravq, edna pesen ne moje da e samo v edna poruchka, no v poveche*/
 category_id INT UNSIGNED NOT NULL,
 album_id INT UNSIGNED NOT NULL,
-CONSTRAINT FOREIGN KEY (order_id) REFERENCES orders(id),
 CONSTRAINT FOREIGN KEY (category_id) REFERENCES category(id),
 CONSTRAINT FOREIGN KEY (album_id) REFERENCES albums(id)
 );
@@ -116,7 +114,7 @@ CREATE TABLE sales (
 id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 sale_date DATE NOT NULL,
 sale_price DECIMAL (10,2) NOT NULL,
-album_id INT UNSIGNED NOT NULL, /*id na album, a ne pesen po pesen*/
+album_id INT UNSIGNED NOT NULL, 
 orders_id INT UNSIGNED NOT NULL,
 CONSTRAINT FOREIGN KEY (album_id) REFERENCES albums(id),
 CONSTRAINT FOREIGN KEY (orders_id) REFERENCES orders(id)
@@ -164,6 +162,13 @@ CREATE TABLE user_album (
 user_id INT UNSIGNED NOT NULL,
 album_id INT UNSIGNED NOT NULL,
 CONSTRAINT FOREIGN KEY (user_id) REFERENCES user(id),
+CONSTRAINT FOREIGN KEY (album_id) REFERENCES album(id)
+);
+
+CREATE TABLE playlist_album (
+playlist_id INT UNSIGNED NOT NULL,
+album_id INT UNSIGNED NOT NULL,
+CONSTRAINT FOREIGN KEY (playlist_id) REFERENCES playlist(id),
 CONSTRAINT FOREIGN KEY (album_id) REFERENCES album(id)
 );
 
