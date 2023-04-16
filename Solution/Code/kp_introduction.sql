@@ -160,6 +160,13 @@ CONSTRAINT FOREIGN KEY (album_id) REFERENCES albums(id),
 CONSTRAINT FOREIGN KEY (genre_id) REFERENCES genre(id)
 );
 
+CREATE TABLE user_album (
+user_id INT UNSIGNED NOT NULL,
+album_id INT UNSIGNED NOT NULL,
+CONSTRAINT FOREIGN KEY (user_id) REFERENCES user(id),
+CONSTRAINT FOREIGN KEY (album_id) REFERENCES album(id)
+);
+
 
 INSERT INTO composer (id, name, egn, nationality, phone, dateOfBirth)
 VALUES (NULL, 'Ludovico Einaudi', '1020104305', 'Italy', '+39023234567', '1955-11-23'),
