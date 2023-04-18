@@ -28,7 +28,6 @@ password VARCHAR(255) NOT NULL,
 egn CHAR(10) NOT NULL UNIQUE,
 address VARCHAR(255) NOT NULL,
 phone VARCHAR(30) NULL DEFAULT NULL,
-isAdmin BOOLEAN DEFAULT false,
 userRole_id INT UNSIGNED NOT NULL,
 CONSTRAINT FOREIGN KEY (userRole_id) REFERENCES userRole(id)
 );
@@ -146,7 +145,7 @@ CONSTRAINT FOREIGN KEY (genre_id) REFERENCES genre(id)
 );
 
 
-CREATE TABLE composer_songs (
+CREATE TABLE composer_song (
 composer_id INT UNSIGNED NOT NULL,
 song_id INT UNSIGNED NOT NULL,
 CONSTRAINT FOREIGN KEY (composer_id) REFERENCES composer(id),
