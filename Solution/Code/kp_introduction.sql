@@ -2,8 +2,6 @@ DROP DATABASE IF EXISTS test_project;
 CREATE DATABASE test_project;
 USE test_project;
 
-/*da obmislq za user-ite da mojat da poruchat albumi, i da mojat da se pravat playlisti, ne da poruchat pesen po pesen*/
-
 
 CREATE TABLE composer (
 id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
@@ -81,7 +79,7 @@ record_label VARCHAR(255) NOT NULL,  /*музикален издател или 
 performer_id INT UNSIGNED NOT NULL,
 CONSTRAINT FOREIGN KEY (performer_id) REFERENCES performer(id)
 );
-/*vseki user da si pravi plailisti*/
+
 
 CREATE TABLE song (
 id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
@@ -161,7 +159,6 @@ CONSTRAINT FOREIGN KEY (composer_id) REFERENCES composer(id),
 CONSTRAINT FOREIGN KEY (album_id) REFERENCES albums(id),
 PRIMARY KEY (composer_id, album_id)
 );
-
 
 
 CREATE TABLE album_genre (
