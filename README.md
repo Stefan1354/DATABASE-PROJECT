@@ -7,4 +7,5 @@ STAY TUNED!
 
 1. To begin with, I created the tables needed for my database and defined the relationships between them
 
-![EER1](https://user-images.githubusercontent.com/101529092/232911586-ec0862d2-f593-41c4-a248-c05b2d237f1b.png)
+
+![EER DIAGRAM](https://user-images.githubusercontent.com/101529092/233332165-98c94a06-c709-407d-b3e8-5df802594b0f.png)
