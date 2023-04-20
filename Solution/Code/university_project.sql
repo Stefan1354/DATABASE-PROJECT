@@ -2,6 +2,7 @@ DROP DATABASE IF EXISTS songs_sales;
 CREATE DATABASE song_sales;
 USE song_sales;
 
+
 CREATE TABLE composer (
 id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 name VARCHAR(255) NOT NULL,
@@ -113,6 +114,7 @@ orders_id INT UNSIGNED NOT NULL,   /*една поръчка може да съ�
 CONSTRAINT FOREIGN KEY (orders_id) REFERENCES orders(id)
 );
 
+
 CREATE TABLE performer_song (
 performer_id INT UNSIGNED NOT NULL,
 song_id INT UNSIGNED NOT NULL,
@@ -178,9 +180,10 @@ CONSTRAINT FOREIGN KEY (user_id) REFERENCES user(id),
 CONSTRAINT FOREIGN KEY (album_id) REFERENCES albums(id)
 );
 
+
 CREATE TABLE sale_album (
 sale_id INT UNSIGNED NOT NULL,
 album_id INT UNSIGNED NOT NULL,
 CONSTRAINT FOREIGN KEY (sale_id) REFERENCES sales(id),
 CONSTRAINT FOREIGN KEY (album_id) REFERENCES albums(id)
-); 
+);
