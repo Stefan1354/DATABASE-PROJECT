@@ -99,13 +99,13 @@ CONSTRAINT FOREIGN KEY (album_id) REFERENCES albums(id)
 
 CREATE TABLE reviews (
 id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-rating DECIMAL(10,2) NOT NULL,     /*рейтинг на песента между 0 и 10*/
+rating DECIMAL(10,2) NOT NULL,     /*рейтинг на албума между 0 и 10*/
 comment TEXT NOT NULL,             /*добавен коментар към рецензията*/
 review_date DATE NOT NULL,         /*дата на добавяне на рецензията*/
 user_id INT UNSIGNED NOT NULL,
-song_id INT UNSIGNED NOT NULL,
+album_id INT UNSIGNED NOT NULL,
 CONSTRAINT FOREIGN KEY (user_id) REFERENCES user(id),
-CONSTRAINT FOREIGN KEY (song_id) REFERENCES song(id)
+CONSTRAINT FOREIGN KEY (album_id) REFERENCES albums(id)
 );
 
 
