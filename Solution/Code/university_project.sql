@@ -198,3 +198,17 @@ album_id INT UNSIGNED NOT NULL,
 CONSTRAINT FOREIGN KEY (sale_id) REFERENCES sales(id),
 CONSTRAINT FOREIGN KEY (album_id) REFERENCES albums(id)
 );
+
+INSERT INTO composer (name, egn, nationality, phone, dateOfBirth) 
+VALUES ('Johann Sebastian Bach', '0912934563', 'German', NULL, '1685-03-21'),
+	     ('Ed Sheeran', '0342673901', 'British', '550-0673', '1991-02-17'),
+	     ('Toots Thielemans', '0067890123', 'German', NULL, '1922-04-29'),
+       ('Manu Chao', '3450729113', 'French', '645-2480', '1961-06-21'),
+	     ('Freddie Mercury', '0608901230', 'British', NULL, '1946-09-05'),
+	     ('Igor Stravinsky', '6789012345', 'Russian', NULL, '1882-06-17'),
+	     ('Drake', '7890123050', 'American', '535-8903', '1986-10-24'),
+	     ('Maurice Ravel', '8901934560', 'French', NULL, '1875-03-07'),
+	     ('Kanye West', '9012341638', 'Russian', '989-0909', '1906-09-25'),
+	     ('John Williams', '9897866540', 'American', '555-2468', '1932-02-08'),
+	     ('Philip Glass', '2146570901', 'American', '089-3221', '1937-01-31'),
+	     ('Elvis Presley', '0459789032', 'American', NULL, '1935-01-08');
