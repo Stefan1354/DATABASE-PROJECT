@@ -203,7 +203,7 @@ INSERT INTO composer (name, egn, nationality, phone, dateOfBirth)
 VALUES ('Johann Sebastian Bach', '0912934563', 'German', NULL, '1685-03-21'),
 	     ('Ed Sheeran', '0342673901', 'British', '550-0673', '1991-02-17'),
 	     ('Toots Thielemans', '0067890123', 'German', NULL, '1922-04-29'),
-       ('Manu Chao', '3450729113', 'French', '645-2480', '1961-06-21'),
+             ('Manu Chao', '3450729113', 'French', '645-2480', '1961-06-21'),
 	     ('Freddie Mercury', '0608901230', 'British', NULL, '1946-09-05'),
 	     ('Igor Stravinsky', '6789012345', 'Russian', NULL, '1882-06-17'),
 	     ('Drake', '7890123050', 'American', '535-8903', '1986-10-24'),
