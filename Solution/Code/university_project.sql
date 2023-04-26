@@ -2,7 +2,6 @@ DROP DATABASE IF EXISTS songs_sales;
 CREATE DATABASE song_sales;
 USE song_sales;
 
-
 CREATE TABLE composer (
 id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 name VARCHAR(255) NOT NULL,
@@ -45,11 +44,7 @@ CONSTRAINT FOREIGN KEY (user_id) REFERENCES user(id)
 CREATE TABLE playlists (  /*плейлисти на потребителите*/
 id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 name VARCHAR(255) NOT NULL,       /*името, което е дал потребителя на плейлистата*/
-songCount INT UNSIGNED NOT NULL,  /*брой на песните в плейлистата*/
-user_id INT UNSIGNED NOT NULL,    /*всеки потребител може да си прави плейлисти*/
-order_id INT UNSIGNED NOT NULL,   /*в една поръчка можем да имаме много плейлисти*/
-CONSTRAINT FOREIGN KEY (user_id) REFERENCES user(id),
-CONSTRAINT FOREIGN KEY (order_id) REFERENCES orders(id)
+songCount INT UNSIGNED NOT NULL  /*брой на песните в плейлистата*/
 );
 
 
@@ -114,7 +109,6 @@ orders_id INT UNSIGNED NOT NULL,   /*една поръчка може да съ�
 CONSTRAINT FOREIGN KEY (orders_id) REFERENCES orders(id)
 );
 
-
 CREATE TABLE performer_song (
 performer_id INT UNSIGNED NOT NULL,
 song_id INT UNSIGNED NOT NULL,
@@ -173,13 +167,27 @@ CONSTRAINT FOREIGN KEY (album_id) REFERENCES albums(id)
 );
 
 
+CREATE TABLE playlist_user (
+playlist_id INT UNSIGNED NOT NULL,
+order_id INT UNSIGNED NOT NULL,
+CONSTRAINT FOREIGN KEY (playlist_id) REFERENCES playlists(id),
+CONSTRAINT FOREIGN KEY (user_id) REFERENCES user(id)
+);
+
+
+CREATE TABLE playlist_order (
+playlist_id INT UNSIGNED NOT NULL,
+order_id INT UNSIGNED NOT NULL,
+CONSTRAINT FOREIGN KEY (playlist_id) REFERENCES playlists(id),
+CONSTRAINT FOREIGN KEY (order_id) REFERENCES orders(id)
+);
+
 CREATE TABLE user_album ( /*потребителите могат да поръчат и албуми*/
 user_id INT UNSIGNED NOT NULL,
 album_id INT UNSIGNED NOT NULL,
 CONSTRAINT FOREIGN KEY (user_id) REFERENCES user(id),
 CONSTRAINT FOREIGN KEY (album_id) REFERENCES albums(id)
 );
-
 
 CREATE TABLE sale_album (
 sale_id INT UNSIGNED NOT NULL,
