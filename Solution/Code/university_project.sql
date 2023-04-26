@@ -212,3 +212,8 @@ VALUES ('Johann Sebastian Bach', '0912934563', 'German', NULL, '1685-03-21'),
        ('John Williams', '9897866540', 'American', '555-2468', '1932-02-08'),
        ('Philip Glass', '2146570901', 'American', '089-3221', '1937-01-31'),
        ('Elvis Presley', '0459789032', 'American', NULL, '1935-01-08');
+       
+       
+INSERT INTO userRole
+VALUES (NULL, 'Admin'),
+       (NULL, 'Customer');
