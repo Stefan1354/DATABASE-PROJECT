@@ -41,14 +41,14 @@ CONSTRAINT FOREIGN KEY (user_id) REFERENCES user(id)
 );
 
 
-CREATE TABLE playlists (  /*плейлисти на потребителите*/
+CREATE TABLE playlists (          /*плейлисти на потребителите*/
 id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 name VARCHAR(255) NOT NULL,       /*името, което е дал потребителя на плейлистата*/
-songCount INT UNSIGNED NOT NULL  /*брой на песните в плейлистата*/
+songCount INT UNSIGNED NOT NULL   /*брой на песните в плейлистата*/
 );
 
 
-CREATE TABLE genre (                        /*в тази таблица ще съхраняваме жанровете на песните в сайта*/
+CREATE TABLE genre (              /*в тази таблица ще съхраняваме жанровете на песните в сайта*/
 id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 name VARCHAR(255) NOT NULL
 );
@@ -105,9 +105,10 @@ CREATE TABLE sales (
 id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 sale_date DATE NOT NULL,
 sale_price DECIMAL (10,2) NOT NULL,
-orders_id INT UNSIGNED NOT NULL,   /*една поръчка може да съдържа много продажби, но всяка продажба се отнася до една конкретна поръчка*/
+orders_id INT UNSIGNED NOT NULL,    /*една поръчка може да съдържа много продажби, но всяка продажба се отнася до една конкретна поръчка*/
 CONSTRAINT FOREIGN KEY (orders_id) REFERENCES orders(id)
 );
+
 
 CREATE TABLE performer_song (
 performer_id INT UNSIGNED NOT NULL,
@@ -117,7 +118,7 @@ CONSTRAINT FOREIGN KEY (song_id) REFERENCES song(id)
 );
 
 
-CREATE TABLE performer_genre ( /*кои жанрове изпълнява даден изпълнител*/
+CREATE TABLE performer_genre (   /*кои жанрове изпълнява даден изпълнител*/
 performer_id INT UNSIGNED NOT NULL,
 genre_id INT UNSIGNED NOT NULL,
 CONSTRAINT FOREIGN KEY (performer_id) REFERENCES performer(id),
@@ -125,7 +126,7 @@ CONSTRAINT FOREIGN KEY (genre_id) REFERENCES genre(id)
 );
 
 
-CREATE TABLE song_genre ( /*една песен може да принадлежи на повече жанра и обратно*/
+CREATE TABLE song_genre (       /*една песен може да принадлежи на повече жанра и обратно*/
 song_id INT UNSIGNED NOT NULL,
 genre_id INT UNSIGNED NOT NULL,
 CONSTRAINT FOREIGN KEY (song_id) REFERENCES song(id),
@@ -182,12 +183,14 @@ CONSTRAINT FOREIGN KEY (playlist_id) REFERENCES playlists(id),
 CONSTRAINT FOREIGN KEY (order_id) REFERENCES orders(id)
 );
 
+
 CREATE TABLE user_album ( /*потребителите могат да поръчат и албуми*/
 user_id INT UNSIGNED NOT NULL,
 album_id INT UNSIGNED NOT NULL,
 CONSTRAINT FOREIGN KEY (user_id) REFERENCES user(id),
 CONSTRAINT FOREIGN KEY (album_id) REFERENCES albums(id)
 );
+
 
 CREATE TABLE sale_album (
 sale_id INT UNSIGNED NOT NULL,
