@@ -199,25 +199,26 @@ CONSTRAINT FOREIGN KEY (sale_id) REFERENCES sales(id),
 CONSTRAINT FOREIGN KEY (album_id) REFERENCES albums(id)
 );
 
+
 INSERT INTO composer (name, egn, nationality, phone, dateOfBirth) 
 VALUES ('Johann Sebastian Bach', '0912934563', 'German', NULL, '1685-03-21'),
-       ('Ed Sheeran', '0342673901', 'British', '550-0673', '1991-02-17'),
-       ('Toots Thielemans', '0067890123', 'German', NULL, '1922-04-29'),
+	   ('Ed Sheeran', '0342673901', 'British', '550-0673', '1991-02-17'),
+	   ('Toots Thielemans', '0067890123', 'German', NULL, '1922-04-29'),
        ('Manu Chao', '3450729113', 'French', '645-2480', '1961-06-21'),
-       ('Freddie Mercury', '0608901230', 'British', NULL, '1946-09-05'),
-       ('Igor Stravinsky', '6789012345', 'Russian', NULL, '1882-06-17'),
-       ('Drake', '7890123050', 'American', '535-8903', '1986-10-24'),
-       ('Maurice Ravel', '8901934560', 'French', NULL, '1875-03-07'),
-       ('Kanye West', '9012341638', 'Russian', '989-0909', '1906-09-25'),
-       ('John Williams', '9897866540', 'American', '555-2468', '1932-02-08'),
-       ('Philip Glass', '2146570901', 'American', '089-3221', '1937-01-31'),
-       ('Elvis Presley', '0459789032', 'American', NULL, '1935-01-08');
-       
-       
+	   ('Freddie Mercury', '0608901230', 'British', NULL, '1946-09-05'),
+	   ('Igor Stravinsky', '6789012345', 'Russian', NULL, '1882-06-17'),
+	   ('Drake', '7890123050', 'American', '535-8903', '1986-10-24'),
+	   ('Maurice Ravel', '8901934560', 'French', NULL, '1875-03-07'),
+	   ('Kanye West', '9012341638', 'American', '989-0909', '1906-09-25'),
+	   ('John Williams', '9897866540', 'American', '555-2468', '1932-02-08'),
+	   ('Philip Glass', '2146570901', 'American', '089-3221', '1937-01-31'),
+	   ('Elvis Presley', '0459789032', 'American', NULL, '1935-01-08');
+
+
 INSERT INTO userRole
 VALUES (NULL, 'Admin'),
        (NULL, 'Customer');
-       
+
 
 INSERT INTO user (username, password, egn, address, phone, userRole_id)
 VALUES ('John Brown', 'H@rdT0Gu3ss!', '0123426739', '123 Main St, Anytown', '353-1333', 2),
@@ -272,60 +273,66 @@ VALUES (NULL, 'Pop'),
        (NULL, 'Funk-rock');
        
        
-INSERT INTO performer(id, name, egn, address, dateOfBirth)
-VALUES (NULL, 'Drake', '9124656742', '111 Pine St San Francisco, CA 94111', '1986-10-24'),
-       (NULL, 'Future', '9219309213', '456 Oak Ave Springfield, USA', '1990-02-16'),
-       (NULL, 'Jimmy Page', '9029831092', '1111 Maple Ln Anytown, USA', '1944-01-09'),
-       (NULL, 'Ed Sheeran', '2909719423', '9999 Cedar Dr Anytown, USA', '1991-02-17'),
-	   (NULL, 'Robert Plant', '3053210991', '7879 Oak Ln Springfield, USA', '1948-08-20'),
-       (NULL, 'John Paul Jones', '2907980123', '2525 Pine Ln Springfield, USA', '1946-01-03'),
-       (NULL, 'Lil Nas X', '9908978213', '2020 Pine Dr Anytown, USA', '1999-04-09'),
-       (NULL, 'Michael Jackson', '8909234560', '2222 Oak Ave Anytown, USA', '1958-08-29'),
-       (NULL, 'Miles Davis', '3202428290', '5555 Pine Ln Anytown, USA', '1926-05-26'),
-       (NULL, 'Macklemore', '4545009877', '6767 Cedar Rd Anytown, USA', '1983-06-19'),
-       (NULL, 'Kanye West', '9012341638', '2727 Oak St Springfield, USA', '1906-09-25'),
-       (NULL, 'John Legend', '3402921045', '2424 Birch Ct Anytown, USA', '1978-12-28'),
-       (NULL, 'John Coltrane', '3003210981', '7878 Oak Ln Springfield, USA', '1926-09-23'),
-	   (NULL, 'John Bonham', '3059210292', '7880 Oak Ln Springfield, USA', '1948-05-31');       
+INSERT INTO performer
+VALUES (NULL, 'Drake', '9124656742', '111 Pine St San Francisco, CA 94111', '098-4265', '1986-10-24'),
+       (NULL, 'Future', '9219309213', '456 Oak Ave Springfield, USA', '099-4372', '1990-02-16'),
+       (NULL, 'Jimi Hendrix', '9029831092', '1111 Maple Ln Anytown, USA', '218-3890', '1942-11-27'),
+       (NULL, 'Ed Sheeran', '2909719423', '9999 Cedar Dr Anytown, USA', '012-4567', '1991-02-17'),
+	   (NULL, 'Eric Clapton', '3053210991', '7879 Oak Ln Springfield, USA', NULL, '1945-03-30'),
+       (NULL, 'Louis Armstrong', '2907980123', '2525 Pine Ln Springfield, USA', '128-4355', '1901-08-04'),
+       (NULL, 'Lil Nas X', '9908978213', '2020 Pine Dr Anytown, USA', NULL, '1999-04-09'),
+       (NULL, 'Michael Jackson', '8909234560', '2222 Oak Ave Anytown, USA', '099-4369', '1958-08-29'),
+       (NULL, 'Miles Davis', '3202428290', '5555 Pine Ln Anytown, USA', '198-5141', '1926-05-26'),
+       (NULL, 'Macklemore', '4545009877', '6767 Cedar Rd Anytown, USA', NULL, '1983-06-19'),
+       (NULL, 'Kanye West', '9012341638', '2727 Oak St Springfield, USA', '108-4362', '1906-09-25'),
+       (NULL, 'John Legend', '3402921045', '2424 Birch Ct Anytown, USA', '028-1285', '1978-12-28'),
+       (NULL, 'Billie Holiday', '3003210981', '7878 Oak Ln Springfield, USA', NULL,  '1915-07-17'),
+	   (NULL, 'Joseph Satriani', '3059210292', '7880 Oak Ln Springfield, USA', '201-4369', '1956-07-15');       
+
 
 INSERT INTO albums
 VALUES (NULL, 'High Off Life', 21, 80.20, '2020-05-15', 'Republic Records', 1),
-       (NULL, 'Led Zeppelin II', 8, 42.39, '1969-10-22', 'Atlantic Records', 3),
+       (NULL, 'Are You Experienced', 8, 42.39, '1969-10-22', 'Atlantic Records', 3),
        (NULL, 'Divide', 11, 50.13, '2017-03-03', 'Asylum', 4),
-       (NULL, 'Led Zeppelin II', 8, 42.39, '1969-10-22', 'Atlantic Records', 5),
        (NULL, 'GEMINI', 16, 60.13, '2017-09-22', 'Bendo LLC', 10),
 	   (NULL, 'The Orange Room', 15, 55.29, '2005-03-01', 'Sheeran Lock', 4),
-	   (NULL, 'Ultrahop hit Connection', 15, 43.29, '2021-09-17', 'Columbia Records', 7),
+	   (NULL, '7', 15, 43.29, '2021-09-17', 'Columbia Records', 7),
        (NULL, 'Thriller', 9, 42.19, '1982-11-30', 'Epic Records', 8),
        (NULL, 'Kind of Blue', 5, 45.52, '1959-08-17', 'Columbia Records', 9),
-       (NULL, 'Led Zeppelin II', 8, 42.39, '1969-10-22', 'Atlantic Records', 6),
        (NULL, 'Scorpion', 25, 89.04, '2018-06-29', 'Cash Money Records', 1),
-	   (NULL, 'Led Zeppelin II', 8, 42.39, '1969-10-22', 'Atlantic Records', 14),
        (NULL, 'Future', 19, 66.14, '2017-02-17', 'Interscope Records', 2),
 	   (NULL, 'Graduation', 13, 51.23, '2008-08-19', 'KonLive', 11),
-	   (NULL, 'Wake Up', 13, 51.23, '2008-08-19', 'KonLive', 12),
-	   (NULL, 'Blue Train', 5, 42.14, '2008-08-19', 'KonLive', 13);
+	   (NULL, 'Wake Up', 13, 51.23, '2008-08-19', 'Domino Recording Company', 12),
+	   (NULL, 'All or Nothing at All', 15, 32.14, '1938-08-19', 'Sony Music', 13),
+	   (NULL, 'The Elephants of Mars', 10, 59.14, '1938-08-19', 'Universal Music Group', 14),
+	   (NULL, 'Hello Dolly', 11, 40.14, '1938-08-19', 'Warner Music', 6),
+	   (NULL, 'Journeyman', 12, 42.32, '1938-08-19', 'XL Recordings', 5);
+       
        
        
 INSERT INTO song
-VALUES (NULL ,'Shape Of You', 'https://www.youtube.com/watch?v=JGwWNGJdvx8', 'Dancehall', 'Solo', 263, 5900000000, 3),
-       (NULL, 'Life Is Good', 'https://www.youtube.com/watch?v=l0U7SxXHkPY', 'Pop', 'Duo', 237, 2100050978, 1),
-	   (NULL, 'Old Town Road', 'https://www.youtube.com/watch?v=w2Ov5jzm3j8', 'Country rap', 'Solo', 157, 345600000, 7),
-	   (NULL, 'Life Is Good', 'https://www.youtube.com/watch?v=l0U7SxXHkPY', 'Pop', 'Duo', 237, 2100050978, 1),
-       (NULL, 'Stronger', 'https://www.youtube.com/watch?v=PsO6ZnUZI0g', 'Trap', 'Solo', 246, 450908795, 14),
-       (NULL, 'Thrift Shop', 'https://www.youtube.com/watch?v=QK8mJJJvaes', 'Pop rap', 'Duo', 432, 345698098, 15),
-       (NULL, 'Thank You', 'https://www.youtube.com/watch?v=12KbOAc8vmk', 'Mix', 'Quintet', 278, 4500989, 2),
-       (NULL, 'Billie Jean', 'https://www.youtube.com/watch?v=Zi_XLOBDo_Y', 'Funk', 'Solo', 321, 123456432, 8),
-       (NULL, 'Addicted', 'https://www.youtube.com/watch?v=6YS03WG2t1Q&list=PLT3w2jU3eU6nF1HzjTtKYzvMhJIvfQ8me', 'Latin Pop', 'Solo', 320, 10500321, 6),
-	   (NULL, 'Sweet Child O Mine', 'https://www.youtube.com/watch?v=1w7OgIMMRc4', 'Hard rock', 'Band', 454, 1234000989, 16),
-       (NULL, 'Lose Yourself', 'https://www.youtube.com/watch?v=_Yhyp-_hX2s', 'Hardcore hip-hop', 'Solo', 220, 415609909, 6),
-       (NULL, 'Moments Notice', 'https://www.youtube.com/watch?v=zbkLmwLzU6g&list=PLKZWLu6q09LN0kEPS7OkuCoNfnWdDqqRM&index=2', 'Jazz track', 'Solo', 640, 350000, 16),
-       (NULL, 'Ten Million', 'https://www.youtube.com/watch?v=24cCemVI1CY&list=PLCJjdqofvBsUJzotAzzXSxleSnjZpUCXp&index=10', 'Retro Pop', 'Solo', 179, 1100000, 5),
-       (NULL, 'In My Feelings', 'https://www.youtube.com/watch?v=DRS_PpOrUZ4', 'Hip-Hop', 'Drums, Bass, Guitar', 217, 160000000, 1),
-       (NULL, 'Stairway To Heaven', 'https://www.youtube.com/watch?v=QkF3oxziUI4', 'Rock', 'Drums, Bass, Guitar', 481, 56000000, 2),
-       (NULL, 'All of Me', 'https://www.youtube.com/watch?v=450p7goxZqg', 'Soul', 'Piano, Bass, Drums', 269, 20000000, 12);
-       
-       
+VALUES (NULL ,'Shape Of You', 'https://www.youtube.com/watch?v=JGwWNGJdvx8', 'Pop', 'R&B', 263, 5900000000, 3),
+       (NULL, 'Life Is Good', 'https://www.youtube.com/watch?v=l0U7SxXHkPY', 'Hip-hop', 'Trap', 237, 2100050978, 1),
+	   (NULL, 'Hard Times', 'https://www.youtube.com/watch?v=uuB1d4Jn5H8&list=PLbGuJX1GQkodSan5SUi0k6i89hGTz9fjL', 'Rock', 'Blues Rock', 157, 345600000, 16),
+       (NULL, 'Stronger', 'https://www.youtube.com/watch?v=PsO6ZnUZI0g', 'Hip-hop', 'Electronic', 246, 450908795, 11),
+       (NULL, 'Thrift Shop', 'https://www.youtube.com/watch?v=QK8mJJJvaes', 'Hip-hop', 'Comedy Rap', 432, 345698098, 4),
+       (NULL, 'Fire', 'https://www.youtube.com/watch?v=cbG7HEEPE1o&list=PL1RRNXldMeRFm7CqtN44oav-TgaWT3yt_', 'Hard rock', 'Electronic', 278, 4500989, 2),
+       (NULL, 'Billie Jean', 'https://www.youtube.com/watch?v=Zi_XLOBDo_Y', 'Pop', 'Drum machines', 321, 123456432, 7),
+	   (NULL, 'Old Town Road', 'https://www.youtube.com/watch?v=w2Ov5jzm3j8', 'Pop', 'Electronic', 157, 345600000, 6),
+       (NULL, 'Addicted', 'https://www.youtube.com/watch?v=6YS03WG2t1Q&list=PLT3w2jU3eU6nF1HzjTtKYzvMhJIvfQ8me', 'Latin Pop', 'Piano', 320, 10500321, 5),
+	   (NULL, 'Sweet Child O Mine', 'https://www.youtube.com/watch?v=1w7OgIMMRc4', 'Hard rock', 'Electronic', 454, 1234000989, 16),
+       (NULL, 'So What', 'https://www.youtube.com/watch?v=ylXk1LBvIqU&list=PLrhkpF1bKMG_D2sxTpxG63WGmIxYGB-Jt', 'Pop rock', 'Electronic', 220, 415609909, 8),
+       (NULL, 'Someday', 'https://www.youtube.com/watch?v=ayxLRvQOni0&list=PL0a-3E47mvaZsK839s_pQSICTPnfKGGT9&index=5', 'Pop', 'Electronic', 640, 350000, 15),
+       (NULL, 'Ten Million', 'https://www.youtube.com/watch?v=24cCemVI1CY&list=PLCJjdqofvBsUJzotAzzXSxleSnjZpUCXp&index=10', 'Hip-hop', 'Electronic', 179, 1100000, 5),
+       (NULL, 'In My Feelings', 'https://www.youtube.com/watch?v=DRS_PpOrUZ4', 'Hip-Hop', 'Electronic', 217, 160000000, 1),
+       (NULL, 'Stairway To Heaven', 'https://www.youtube.com/watch?v=QkF3oxziUI4', 'Rock', 'Electronic', 481, 56000000, 2),
+       (NULL, 'All of Me', 'https://www.youtube.com/watch?v=450p7goxZqg', 'Pop', 'Electronic', 468, 2000000, 12),
+	   (NULL, 'Sahara', 'https://www.youtube.com/watch?v=q9HCGqByjak', 'Pop', 'Electronic', 679, 125000, 14),
+	   (NULL, 'Nonstop', 'https://www.youtube.com/watch?v=XNpGNykVZ6U&list=PLnHe1KWzAptFfF5UTOSuZWsCI2EXz_PHF&index=3', 'Hip-hop', 'Electronic', 389, 203200430, 9),
+	   (NULL, 'Zoom', 'https://www.youtube.com/watch?v=q9HCGqByjak', 'Hip-hop', 'Electronic', 325, 20200300, 10),
+	   (NULL, 'But Not For Me', 'https://www.youtube.com/watch?v=TUVdBKsgq2o', 'Jazz', 'Electronic', 232, 125000, 13);
+
+	
 INSERT INTO reviews (id, rating, comment, review_date, user_id, album_id)
 VALUES (NULL, 8.5, 'Great album, loved it!', '2023-02-20', 1, 1),
        (NULL, 7.2, 'Not their best work, but still enjoyable', '2023-02-21', 2, 3),
@@ -350,3 +357,72 @@ VALUES ('2023-03-01', 49.99, 1),
 	   ('2023-04-12', 69.99, 8),
 	   ('2023-04-15', 59.99, 9),
 	   ('2023-04-15', 109.99, 10);
+       
+       
+INSERT INTO performer_song
+VALUES (4, 1),
+       (4, 9),
+       (10, 6),
+       (11, 6);
+       
+INSERT INTO performer_genre
+VALUES (1, 3),
+       (1, 4),
+       (1, 4),
+       (2, 4);
+       
+INSERT INTO song_genre
+VALUES (5, 1),
+       (5, 2),
+       (5, 3),
+       (6, 3);
+       
+
+INSERT INTO composer_song
+VALUES (3, 9),
+       (3, 11),
+       (10, 2),
+       (11, 2);
+
+
+INSERT INTO composer_albums 
+VALUES (2, 4),
+       (3, 4),
+	   (12, 3),
+	   (12, 5);
+       
+INSERT INTO album_genre
+VALUES (1, 3),
+       (1, 4),
+	   (5, 6),
+	   (6, 6);
+
+INSERT INTO playlist_album
+VALUES (2, 1),
+	   (2, 13),
+       (1, 2),
+       (1, 2);
+       
+INSERT INTO playlist_user
+VALUES (2, 3),
+	   (2, 4),
+       (7, 5),
+       (8, 5);
+       
+INSERT INTO playlist_order
+VALUES (6, 1),
+       (6, 3),
+       (8, 2),
+       (10, 2);
+
+INSERT INTO user_album
+VALUES (10, 1),
+       (10, 5),
+       (2, 7),
+       (4, 7);
+       
+INSERT INTO sale_album
+VALUES (4, 2),
+	   (4, 3),
+       (7, 5),
+	   (9, 5);
