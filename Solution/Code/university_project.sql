@@ -217,3 +217,136 @@ VALUES ('Johann Sebastian Bach', '0912934563', 'German', NULL, '1685-03-21'),
 INSERT INTO userRole
 VALUES (NULL, 'Admin'),
        (NULL, 'Customer');
+       
+
+INSERT INTO user (username, password, egn, address, phone, userRole_id)
+VALUES ('John Brown', 'H@rdT0Gu3ss!', '0123426739', '123 Main St, Anytown', '353-1333', 2),
+	   ('Jane Lee', '5tr0ngP@55w0rd', '2305673902', '21 Oak Ave, Otherville', NULL, 2),
+	   ('Oleg Smirnov', 'cat1@3!?5t', '3251789913', '34 Elm St, Somewhere', '757-1629', 2),
+	   ('Sara Ali', 'tY5nCj!1', '1567390224', '78 Pine Rd, Anytown', NULL, 2),
+	   ('Mike Durant', 'P@8rKm#7', '5378101237', '21 Maple Dr, Otherville', '252-4424', 2),
+	   ('Bob Wilson', 'Q8zHfL!7a', '9782032300', '21A Cedar Ave, Somewhere', NULL, 2),
+	   ('Ana Petkova', '8#vQfLj!', '1890223959', '32B Oak St, Anytown', '607-8780', 2),
+	   ('Robert James', 'M9pBcT!z', '8901257547', '87A Birch Ln, Otherville', NULL, 2),
+	   ('Ekaterina Valova', '1#jGHTk$', '9012245778', '133 Elm St, Somewhere', '989-3460', 2),
+	   ('Beatris Grivardis', 'F7nGkP!z', '0103459701', '454 Maple Ave, Anytown', NULL, 1);
+
+
+INSERT INTO orders (order_date, price, payment_status, delivery_status, user_id)
+VALUES ('2023-03-25', 10.50, 'paid', 'delivered', 1),
+       ('2023-03-26', 25.80, 'paid', 'delivered', 2),
+       ('2023-03-26', 42.00, 'paid', 'delivered', 2),
+       ('2023-03-27', 15.00, 'paid', 'delivered', 3),
+       ('2023-04-03', 56.30, 'paid', 'in transit', 4),
+       ('2023-04-04', 12.75, 'paid', 'in transit', 5),
+	   ('2023-04-07', 37.20, 'pending', 'in transit', 5),
+       ('2023-04-07', 19.90, 'paid', 'in transit', 5),
+       ('2023-04-07', 82.60, 'paid', 'in transit', 6),
+       ('2023-04-10', 45.30, 'paid', 'delivered', 7),
+       ('2023-04-10', 45.30, 'paid', 'delivered', 8),
+       ('2023-04-12', 45.30, 'pending', 'delivered', 9),
+       ('2023-04-15', 45.30, 'pending', 'not shipped', 10);
+       
+       
+INSERT INTO playlists (name, songCount) 
+VALUES ('Rock Anthems', 15),
+       ('Hip Hop Bangers', 12),
+       ('Jazz Classics', 10),
+       ('Chill Vibes', 8),
+       ('Party Mix', 20),
+       ('Road Trip Tunes', 18),
+       ('Pop Hits', 14),
+       ('Workout playlist', 16),
+       ('Oldies But Goodies', 10),
+       ('Country Favorites', 12);
+       
+       
+INSERT INTO genre
+VALUES (NULL, 'Pop'),
+       (NULL, 'Pop-punk'),
+       (NULL ,'Hip-hop'),
+       (NULL, 'Trip-hop'),
+       (NULL, 'Jazz'),
+       (NULL, 'Jazz fusion'),
+       (NULL, 'Rock'),
+       (NULL, 'Funk-rock');
+       
+       
+INSERT INTO performer(id, name, egn, address, dateOfBirth)
+VALUES (NULL, 'Drake', '9124656742', '111 Pine St San Francisco, CA 94111', '1986-10-24'),
+       (NULL, 'Future', '9219309213', '456 Oak Ave Springfield, USA', '1990-02-16'),
+       (NULL, 'Jimmy Page', '9029831092', '1111 Maple Ln Anytown, USA', '1944-01-09'),
+       (NULL, 'Ed Sheeran', '2909719423', '9999 Cedar Dr Anytown, USA', '1991-02-17'),
+	   (NULL, 'Robert Plant', '3053210991', '7879 Oak Ln Springfield, USA', '1948-08-20'),
+       (NULL, 'John Paul Jones', '2907980123', '2525 Pine Ln Springfield, USA', '1946-01-03'),
+       (NULL, 'Lil Nas X', '9908978213', '2020 Pine Dr Anytown, USA', '1999-04-09'),
+       (NULL, 'Michael Jackson', '8909234560', '2222 Oak Ave Anytown, USA', '1958-08-29'),
+       (NULL, 'Miles Davis', '3202428290', '5555 Pine Ln Anytown, USA', '1926-05-26'),
+       (NULL, 'Macklemore', '4545009877', '6767 Cedar Rd Anytown, USA', '1983-06-19'),
+       (NULL, 'Kanye West', '9012341638', '2727 Oak St Springfield, USA', '1906-09-25'),
+       (NULL, 'John Legend', '3402921045', '2424 Birch Ct Anytown, USA', '1978-12-28'),
+       (NULL, 'John Coltrane', '3003210981', '7878 Oak Ln Springfield, USA', '1926-09-23'),
+	   (NULL, 'John Bonham', '3059210292', '7880 Oak Ln Springfield, USA', '1948-05-31');       
+
+INSERT INTO albums
+VALUES (NULL, 'High Off Life', 21, 80.20, '2020-05-15', 'Republic Records', 1),
+       (NULL, 'Led Zeppelin II', 8, 42.39, '1969-10-22', 'Atlantic Records', 3),
+       (NULL, 'Divide', 11, 50.13, '2017-03-03', 'Asylum', 4),
+       (NULL, 'Led Zeppelin II', 8, 42.39, '1969-10-22', 'Atlantic Records', 5),
+       (NULL, 'GEMINI', 16, 60.13, '2017-09-22', 'Bendo LLC', 10),
+	   (NULL, 'The Orange Room', 15, 55.29, '2005-03-01', 'Sheeran Lock', 4),
+	   (NULL, 'Ultrahop hit Connection', 15, 43.29, '2021-09-17', 'Columbia Records', 7),
+       (NULL, 'Thriller', 9, 42.19, '1982-11-30', 'Epic Records', 8),
+       (NULL, 'Kind of Blue', 5, 45.52, '1959-08-17', 'Columbia Records', 9),
+       (NULL, 'Led Zeppelin II', 8, 42.39, '1969-10-22', 'Atlantic Records', 6),
+       (NULL, 'Scorpion', 25, 89.04, '2018-06-29', 'Cash Money Records', 1),
+	   (NULL, 'Led Zeppelin II', 8, 42.39, '1969-10-22', 'Atlantic Records', 14),
+       (NULL, 'Future', 19, 66.14, '2017-02-17', 'Interscope Records', 2),
+	   (NULL, 'Graduation', 13, 51.23, '2008-08-19', 'KonLive', 11),
+	   (NULL, 'Wake Up', 13, 51.23, '2008-08-19', 'KonLive', 12),
+	   (NULL, 'Blue Train', 5, 42.14, '2008-08-19', 'KonLive', 13);
+       
+       
+INSERT INTO song
+VALUES (NULL ,'Shape Of You', 'https://www.youtube.com/watch?v=JGwWNGJdvx8', 'Dancehall', 'Solo', 263, 5900000000, 3),
+       (NULL, 'Life Is Good', 'https://www.youtube.com/watch?v=l0U7SxXHkPY', 'Pop', 'Duo', 237, 2100050978, 1),
+	   (NULL, 'Old Town Road', 'https://www.youtube.com/watch?v=w2Ov5jzm3j8', 'Country rap', 'Solo', 157, 345600000, 7),
+	   (NULL, 'Life Is Good', 'https://www.youtube.com/watch?v=l0U7SxXHkPY', 'Pop', 'Duo', 237, 2100050978, 1),
+       (NULL, 'Stronger', 'https://www.youtube.com/watch?v=PsO6ZnUZI0g', 'Trap', 'Solo', 246, 450908795, 14),
+       (NULL, 'Thrift Shop', 'https://www.youtube.com/watch?v=QK8mJJJvaes', 'Pop rap', 'Duo', 432, 345698098, 15),
+       (NULL, 'Thank You', 'https://www.youtube.com/watch?v=12KbOAc8vmk', 'Mix', 'Quintet', 278, 4500989, 2),
+       (NULL, 'Billie Jean', 'https://www.youtube.com/watch?v=Zi_XLOBDo_Y', 'Funk', 'Solo', 321, 123456432, 8),
+       (NULL, 'Addicted', 'https://www.youtube.com/watch?v=6YS03WG2t1Q&list=PLT3w2jU3eU6nF1HzjTtKYzvMhJIvfQ8me', 'Latin Pop', 'Solo', 320, 10500321, 6),
+	   (NULL, 'Sweet Child O Mine', 'https://www.youtube.com/watch?v=1w7OgIMMRc4', 'Hard rock', 'Band', 454, 1234000989, 16),
+       (NULL, 'Lose Yourself', 'https://www.youtube.com/watch?v=_Yhyp-_hX2s', 'Hardcore hip-hop', 'Solo', 220, 415609909, 6),
+       (NULL, 'Moments Notice', 'https://www.youtube.com/watch?v=zbkLmwLzU6g&list=PLKZWLu6q09LN0kEPS7OkuCoNfnWdDqqRM&index=2', 'Jazz track', 'Solo', 640, 350000, 16),
+       (NULL, 'Ten Million', 'https://www.youtube.com/watch?v=24cCemVI1CY&list=PLCJjdqofvBsUJzotAzzXSxleSnjZpUCXp&index=10', 'Retro Pop', 'Solo', 179, 1100000, 5),
+       (NULL, 'In My Feelings', 'https://www.youtube.com/watch?v=DRS_PpOrUZ4', 'Hip-Hop', 'Drums, Bass, Guitar', 217, 160000000, 1),
+       (NULL, 'Stairway To Heaven', 'https://www.youtube.com/watch?v=QkF3oxziUI4', 'Rock', 'Drums, Bass, Guitar', 481, 56000000, 2),
+       (NULL, 'All of Me', 'https://www.youtube.com/watch?v=450p7goxZqg', 'Soul', 'Piano, Bass, Drums', 269, 20000000, 12);
+       
+       
+INSERT INTO reviews (id, rating, comment, review_date, user_id, album_id)
+VALUES (NULL, 8.5, 'Great album, loved it!', '2023-02-20', 1, 1),
+       (NULL, 7.2, 'Not their best work, but still enjoyable', '2023-02-21', 2, 3),
+       (NULL, 9.1, 'Incredible album, definitely a masterpiece', '2023-03-10', 3, 4),
+       (NULL, 5.5, 'Not my cup of tea, but some may enjoy it', '2023-03-15', 4, 5),
+       (NULL, 6.9, 'Solid album, nothing too groundbreaking', '2023-03-20', 5, 6),
+       (NULL, 8.8, 'One of my favorite albums of all time', '2023-03-22', 6, 7),
+       (NULL, 4.3, 'Disappointing album, expected more from this artist', '2023-03-25', 7, 8),
+       (NULL, 9.5, 'Absolutely amazing album, highly recommend', '2023-04-05', 8, 9),
+       (NULL, 7.8, 'Good album, but not as good as their previous work', '2023-04-10', 9, 10),
+	   (NULL, 6.1, 'Not a fan of this album, couldn''t get into it', '2023-04-12', 10, 11);  
+       
+       
+INSERT INTO sales (sale_date, sale_price, orders_id) 
+VALUES ('2023-03-01', 49.99, 1),
+	   ('2023-03-01', 29.99, 2),
+       ('2023-03-05', 99.99, 3),
+	   ('2023-03-11', 19.99, 4),
+	   ('2023-03-12', 39.99, 5),
+	   ('2023-04-05', 79.99, 6),
+	   ('2023-04-11', 89.99, 7),
+	   ('2023-04-12', 69.99, 8),
+	   ('2023-04-15', 59.99, 9),
+	   ('2023-04-15', 109.99, 10);
