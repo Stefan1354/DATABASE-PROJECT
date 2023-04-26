@@ -1,7 +1,6 @@
 DROP DATABASE IF EXISTS songs_sales;
-CREATE DATABASE song_sales;
-USE song_sales;
-
+CREATE DATABASE songs_sales;
+USE songs_sales;
 
 CREATE TABLE composer (
 id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
@@ -171,7 +170,7 @@ CONSTRAINT FOREIGN KEY (album_id) REFERENCES albums(id)
 
 CREATE TABLE playlist_user (  /*един user може да си направи много плейлисти и обратно */
 playlist_id INT UNSIGNED NOT NULL,
-order_id INT UNSIGNED NOT NULL,
+user_id INT UNSIGNED NOT NULL,
 CONSTRAINT FOREIGN KEY (playlist_id) REFERENCES playlists(id),
 CONSTRAINT FOREIGN KEY (user_id) REFERENCES user(id)
 );
