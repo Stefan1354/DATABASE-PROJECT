@@ -236,7 +236,7 @@ VALUES ('John Brown', 'H@rdT0Gu3ss!', '0123426739', '123 Main St, Anytown', '353
 INSERT INTO orders (order_date, price, payment_status, delivery_status, user_id)
 VALUES ('2023-03-25', 20.50, 'paid', 'delivered', 1),
        ('2023-03-26', 25.80, 'paid', 'delivered', 2),
-       ('2023-03-26', 92.00, 'paid', 'delivered', 2),
+       ('2023-03-26', 20.50, 'paid', 'delivered', 2),
        ('2023-03-27', 15.00, 'paid', 'delivered', 3),
        ('2023-04-03', 205.30, 'paid', 'in transit', 4),
        ('2023-04-04', 12.75, 'paid', 'in transit', 5),
@@ -287,7 +287,13 @@ VALUES (NULL, 'Drake', '9124656742', '111 Pine St San Francisco, CA 94111', '098
        (NULL, 'Kanye West', '9012341638', '2727 Oak St Springfield, USA', '108-4362', '1977-06-08'),
        (NULL, 'John Legend', '3402921045', '2424 Birch Ct Anytown, USA', '028-1285', '1978-12-28'),
        (NULL, 'Billie Holiday', '3003210981', '7878 Oak Ln Springfield, USA', NULL,  '1915-07-17'),
-	   (NULL, 'Joseph Satriani', '3059210292', '7880 Oak Ln Springfield, USA', '201-4369', '1956-07-15');       
+	   (NULL, 'Joseph Satriani', '3059210292', '7881 Oak Ln Springfield, USA', '201-4369', '1956-07-15'),
+       (NULL, '21 Savage', '9359410219', '7882 Oak Ln Springfield, USA', '101-5468', '1992-10-22'),
+       (NULL, 'Aggro Santoss', '0395210283', '7898 Oak Ln Springfield, USA', '109-2309', '1989-10-12'),
+       (NULL, 'Common', '5059220290', '0880 Oak Ln Springfield, USA', '252-4359', '1972-03-13'),
+	   (NULL, 'Cardi B', '4059320291', '5353 Oak Ln Springfield, USA', '522-3790', '1992-10-11'),
+       (NULL, 'Ceza', '3038220281', '4884 Oak Ln Springfield, USA', '530-3438', '1976-12-31'),
+	   (NULL, 'Tim Dog', '4139221298', '7229 Oak Ln Springfield, USA', '501-4392', '1976-01-03');
 
 
 INSERT INTO albums
@@ -345,18 +351,17 @@ VALUES (NULL, 8.5, 'Great album, loved it!', '2023-02-20', 1, 1),
 	   (NULL, 6.1, 'Not a fan of this album, couldn''t get into it', '2023-04-12', 10, 11);  
        
        
-       
-INSERT INTO sales (sale_date, sale_price, orders_id) 
-VALUES ('2023-03-01', 49.99, 1),
-	   ('2023-03-01', 29.99, 2),
-       ('2023-03-05', 99.99, 3),
-	   ('2023-03-11', 19.99, 4),
-	   ('2023-03-12', 39.99, 5),
-	   ('2023-04-05', 79.99, 6),
-	   ('2023-04-11', 89.99, 7),
-	   ('2023-04-12', 69.99, 8),
-	   ('2023-04-15', 59.99, 9),
-	   ('2023-04-15', 109.99, 10);
+INSERT INTO sales (sale_date, sale_price, orders_id)
+VALUES ('2023-04-01', 120.99, 1),
+	   ('2023-04-03', 35.99, 2),
+	   ('2023-04-05', 9.99, 3),
+	   ('2023-04-07', 140.99, 4),
+	   ('2023-04-09', 50.99, 5),
+       ('2023-04-10', 50.99, 5),
+       ('2023-04-10', 100.99, 5),
+       ('2023-04-11', 89.09, 5),
+       ('2023-04-11', 56.99, 5),
+       ('2023-04-11', 30.20, 5);
        
        
 INSERT INTO performer_song
@@ -372,11 +377,14 @@ VALUES (1, 3),
        (11, 4),
        (2, 4);
        
+       
 INSERT INTO song_genre
 VALUES (5, 1),
        (5, 2),
        (8, 3),
-       (6, 3);
+       (6, 3),
+       (10, 4),
+       (2, 3);
        
 
 INSERT INTO composer_song
@@ -401,11 +409,13 @@ VALUES (1, 3),
 	   (5, 6),
 	   (6, 6);
 
+
 INSERT INTO playlist_album
 VALUES (2, 1),
 	   (2, 13),
        (1, 2),
        (3, 2);
+       
        
 INSERT INTO playlist_user
 VALUES (2, 3),
@@ -413,44 +423,83 @@ VALUES (2, 3),
        (7, 5),
        (8, 5);
        
+       
 INSERT INTO playlist_order
 VALUES (6, 1),
        (6, 3),
        (8, 2),
        (10, 2);
 
+
 INSERT INTO user_album
 VALUES (10, 1),
        (10, 5),
        (2, 7),
-       (4, 7);
+       (4, 7),
+       (1, 3),
+       (3, 4),
+       (7, 8);
+       
        
 INSERT INTO sale_album
-VALUES (4, 2),
-	   (4, 3),
-       (7, 5),
-	   (9, 5);
+VALUES (1, 1),
+	   (2, 2),
+	   (2, 7),
+       (3, 4),
+       (4, 5),
+       (5, 3),
+	   (10, 8),
+	   (3, 8),
+	   (9, 9),
+	   (8, 9),
+       (4, 9),
+       (7, 9),
+       (4, 8),
+       (3, 8),
+       (7, 8),
+       (4, 5);
        
-/*Напишете заявка, с която извеждате всички песни, които са написани от даден композитор, заедно с информация за композитора:*/
+#2
+/*SELECT * FROM composer
+WHERE nationality = 'German';*/
 
-/*SELECT song.name AS songName, composer.name AS composerName, composer.egn AS EGN, composer.nationality AS nationality, composer.phone AS MPhone, composer.dateOfBirth AS dateOfBirth
-FROM song 
-JOIN composer_song ON song.id = composer_song.song_id
-JOIN composer ON composer.id = composer_song.composer_id
-WHERE composer.id = 3;*/
+#3
+/*SELECT sale_date, SUM(sale_price) AS totalSum
+FROM sales
+GROUP BY sale_date;*/
 
-/*Напишете заявка, с която извеждате всички песни, които са написани от повече от един композитор, като са подредени в азбучен ред по заглавие:*/
-/*SELECT song.name AS nameOfSong
-FROM song
-LEFT JOIN composer_song ON song.id = composer_song.song_id
-GROUP BY song.id
-HAVING COUNT(composer_song.composer_id) > 1
-ORDER BY song.name ASC;*/
+#4
+/*SELECT user.username, reviews.comment, albums.title AS albumTitle
+FROM user 
+JOIN reviews ON user.id = reviews.user_id
+JOIN albums ON reviews.album_id = albums.id;*/
 
-/*Напишете заявка с която извеждате всички продажби, направени на 11 март 2023 година, 
-като покажете и информацията за албумите, които са били закупени:*/
+#5
+/*SELECT albums.title AS albumName, 
+albums.numberOfSongs, 
+albums.length, 
+albums.release_date, 
+albums.record_label, 
+performer.name AS performerName
+FROM albums 
+RIGHT OUTER JOIN performer
+ON albums.performer_id = performer.id;*/
 
-/*SELECT sales.id, sales.sale_price AS price, albums.title, albums.record_label
-FROM sales JOIN sale_album ON sales.id = sale_album.sale_id 
-JOIN albums ON sale_album.album_id = albums.id
-WHERE sales.sale_date = '2023-03-11';*/
+#6
+/*SELECT song.name AS nameOfSong, genre.name AS genreName
+FROM song JOIN genre
+ON song.id IN (
+		SELECT song_id
+        FROM song_genre
+        WHERE song_genre.genre_id = genre.id
+        );*/
+        
+#7       
+/*SELECT albums.title AS nameOfAlbum, COUNT(sale_album.sale_id) AS sales_count, SUM(sales.sale_price) as total_sales
+FROM albums
+JOIN sale_album ON albums.id = sale_album.album_id
+JOIN sales ON sale_album.sale_id = sales.id
+GROUP BY albums.id
+HAVING total_sales > 100
+ORDER BY total_sales DESC
+LIMIT 3;*/
