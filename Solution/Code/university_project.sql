@@ -287,13 +287,13 @@ VALUES (NULL, 'Drake', '9124656742', '111 Pine St San Francisco, CA 94111', '098
        (NULL, 'Kanye West', '9012341638', '2727 Oak St Springfield, USA', '108-4362', '1977-06-08'),
        (NULL, 'John Legend', '3402921045', '2424 Birch Ct Anytown, USA', '028-1285', '1978-12-28'),
        (NULL, 'Billie Holiday', '3003210981', '7878 Oak Ln Springfield, USA', NULL,  '1915-07-17'),
-	   (NULL, 'Joseph Satriani', '3059210292', '7881 Oak Ln Springfield, USA', '201-4369', '1956-07-15'),
+       (NULL, 'Joseph Satriani', '3059210292', '7881 Oak Ln Springfield, USA', '201-4369', '1956-07-15'),
        (NULL, '21 Savage', '9359410219', '7882 Oak Ln Springfield, USA', '101-5468', '1992-10-22'),
        (NULL, 'Aggro Santoss', '0395210283', '7898 Oak Ln Springfield, USA', '109-2309', '1989-10-12'),
        (NULL, 'Common', '5059220290', '0880 Oak Ln Springfield, USA', '252-4359', '1972-03-13'),
-	   (NULL, 'Cardi B', '4059320291', '5353 Oak Ln Springfield, USA', '522-3790', '1992-10-11'),
+       (NULL, 'Cardi B', '4059320291', '5353 Oak Ln Springfield, USA', '522-3790', '1992-10-11'),
        (NULL, 'Ceza', '3038220281', '4884 Oak Ln Springfield, USA', '530-3438', '1976-12-31'),
-	   (NULL, 'Tim Dog', '4139221298', '7229 Oak Ln Springfield, USA', '501-4392', '1976-01-03');
+       (NULL, 'Tim Dog', '4139221298', '7229 Oak Ln Springfield, USA', '501-4392', '1976-01-03');
 
 
 INSERT INTO albums
@@ -307,12 +307,12 @@ VALUES (NULL, 'High Off Life', 21, 80.20, '2020-05-15', 'Republic Records', 1),
        (NULL, 'Kind of Blue', 5, 45.52, '1959-08-17', 'Columbia Records', 9),
        (NULL, 'Scorpion', 25, 89.04, '2018-06-29', 'Cash Money Records', 1),
        (NULL, 'Future', 19, 66.14, '2017-02-17', 'Interscope Records', 2),
-	   (NULL, 'Graduation', 13, 51.23, '2008-08-19', 'KonLive', 11),
-	   (NULL, 'Wake Up', 13, 51.13, '2008-08-19', 'Domino Recording Company', 12),
-	   (NULL, 'All or Nothing at All', 15, 32.48, '1938-08-19', 'Sony Music', 13),
-	   (NULL, 'The Elephants of Mars', 10, 59.04, '1938-08-19', 'Universal Music Group', 14),
-	   (NULL, 'Hello Dolly', 11, 40.24, '1938-08-19', 'Warner Music', 6),
-	   (NULL, 'Journeyman', 12, 42.32, '1938-08-19', 'XL Recordings', 5);
+       (NULL, 'Graduation', 13, 51.23, '2008-08-19', 'KonLive', 11),
+       (NULL, 'Wake Up', 13, 51.13, '2008-08-19', 'Domino Recording Company', 12),
+       (NULL, 'All or Nothing at All', 15, 32.48, '1938-08-19', 'Sony Music', 13),
+       (NULL, 'The Elephants of Mars', 10, 59.04, '1938-08-19', 'Universal Music Group', 14),
+       (NULL, 'Hello Dolly', 11, 40.24, '1938-08-19', 'Warner Music', 6),
+       (NULL, 'Journeyman', 12, 42.32, '1938-08-19', 'XL Recordings', 5);
        
        
 INSERT INTO song
