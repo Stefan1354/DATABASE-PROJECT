@@ -8,5 +8,6 @@ STAY TUNED!
 1. To begin with, I created the tables needed for my database and defined the relationships between them
 
 
-![Untitled](https://user-images.githubusercontent.com/101529092/236323181-268526d0-6fe6-4afe-8a24-2c4d4c2eab68.png)
+
+![ajdebre](https://user-images.githubusercontent.com/101529092/236326284-9a24807d-d6c8-4531-a04e-bba4c9f7d242.png)
 
