@@ -187,17 +187,17 @@ CONSTRAINT FOREIGN KEY (album_id) REFERENCES albums(id)
 
 INSERT INTO composer (name, egn, nationality, phone, dateOfBirth) 
 VALUES ('Hanz Zimmer', '0912934563', 'German', '455-9009', '1957-09-12'),
-	   ('Ed Sheeran', '0342673901', 'British', '550-0673', '1991-02-17'),
-	   ('Toots Thielemans', '0067890123', 'German', NULL, '1922-04-29'),
+       ('Ed Sheeran', '0342673901', 'British', '550-0673', '1991-02-17'),
+       ('Toots Thielemans', '0067890123', 'German', NULL, '1922-04-29'),
        ('Manu Chao', '3450729113', 'French', '645-2480', '1961-06-21'),
-	   ('Freddie Mercury', '0608901230', 'British', NULL, '1946-09-05'),
-	   ('Alexandre Desplat', '6789012345', 'French', NULL, '1961-08-23'),
-	   ('Drake', '7890123050', 'American', '535-8903','1986-10-24'),
-	   ('Joe Dassin', '8901934560', 'French', NULL, '1938-11-05'),
-	   ('Kanye West', '9012341638', 'American', '989-0909', '1977-06-08'),
-	   ('Charles Aznavour', '9897866540', 'French', NULL, '1924-05-22'),
-	   ('Philip Glass', '2146570901', 'American', NULL, '1937-01-31'),
-	   ('Elvis Presley', '0459789032', 'American', NULL, '1935-01-08');
+       ('Freddie Mercury', '0608901230', 'British', NULL, '1946-09-05'),
+       ('Alexandre Desplat', '6789012345', 'French', NULL, '1961-08-23'),
+       ('Drake', '7890123050', 'American', '535-8903','1986-10-24'),
+       ('Joe Dassin', '8901934560', 'French', NULL, '1938-11-05'),
+       ('Kanye West', '9012341638', 'American', '989-0909', '1977-06-08'),
+       ('Charles Aznavour', '9897866540', 'French', NULL, '1924-05-22'),
+       ('Philip Glass', '2146570901', 'American', NULL, '1937-01-31'),
+       ('Elvis Presley', '0459789032', 'American', NULL, '1935-01-08');
 
 
 INSERT INTO userRole
