@@ -2,12 +2,13 @@ DROP DATABASE IF EXISTS songs_sales;
 CREATE DATABASE songs_sales;
 USE songs_sales;
 
+
 CREATE TABLE composer (
 id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 name VARCHAR(255) NOT NULL,
-egn CHAR(10) NOT NULL UNIQUE,
+egn CHAR(10) NOT NULL UNIQUE CONSTRAINT EGN CHECK(CHAR_LENGTH(egn)=10),
 nationality VARCHAR(255) NOT NULL,
-phone VARCHAR(30) NULL DEFAULT NULL,
+phone VARCHAR(30) DEFAULT NULL,
 dateOfBirth DATE NOT NULL
 );
 
@@ -22,9 +23,9 @@ CREATE TABLE user (
 id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 username VARCHAR(255) NOT NULL,
 password VARCHAR(255) NOT NULL,
-egn CHAR(10) NOT NULL UNIQUE,
+egn CHAR(10) NOT NULL UNIQUE CONSTRAINT EGNuser CHECK(CHAR_LENGTH(egn)=10),
 address VARCHAR(255) NOT NULL,
-phone VARCHAR(30) NULL DEFAULT NULL,
+phone VARCHAR(30) DEFAULT NULL,
 userRole_id INT UNSIGNED NOT NULL,
 CONSTRAINT FOREIGN KEY (userRole_id) REFERENCES userRole(id)
 );
@@ -33,7 +34,7 @@ CONSTRAINT FOREIGN KEY (userRole_id) REFERENCES userRole(id)
 CREATE TABLE orders (
 id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 order_date DATE NOT NULL,                /*дата на поръчката*/
-price DECIMAL(6,2) NOT NULL,             /*общата цена на поръчката*/
+price FLOAT NOT NULL,           /*общата цена на поръчката*/
 payment_status VARCHAR(100) NOT NULL,    /*статус на плащането*/
 delivery_status VARCHAR(100) NOT NULL,   /*статус на доставката*/
 user_id INT UNSIGNED NOT NULL,
@@ -57,9 +58,9 @@ name VARCHAR(255) NOT NULL
 CREATE TABLE performer (
 id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 name VARCHAR(255) NOT NULL,
-egn CHAR(10) NOT NULL UNIQUE,
+egn CHAR(10) NOT NULL UNIQUE CONSTRAINT EGNperformer CHECK(CHAR_LENGTH(egn)=10),
 address VARCHAR(255) NOT NULL,
-phone VARCHAR(30) NULL DEFAULT NULL,
+phone VARCHAR(30) DEFAULT NULL,
 dateOfBirth DATE NOT NULL
 );
 
@@ -71,6 +72,7 @@ numberOfSongs INT NOT NULL,
 length DECIMAL(6,2),                 /*дължината на всички песни в минути и секунди*/
 release_date DATE NOT NULL,          /*дата на излизане*/
 record_label VARCHAR(255) NOT NULL,  /*музикален издател или звукозаписна компания*/
+price FLOAT NOT NULL,                /*цена на албума*/
 performer_id INT UNSIGNED NOT NULL,
 CONSTRAINT FOREIGN KEY (performer_id) REFERENCES performer(id)
 );
@@ -79,7 +81,7 @@ CONSTRAINT FOREIGN KEY (performer_id) REFERENCES performer(id)
 CREATE TABLE song (
 id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 name VARCHAR(255) NOT NULL,
-link VARCHAR(255) NOT NULL,
+link VARCHAR(255) NOT NULL UNIQUE,
 style VARCHAR(100) NOT NULL,
 arrangement VARCHAR(100) NOT NULL,
 duration INT UNSIGNED NOT NULL,
@@ -104,7 +106,7 @@ CONSTRAINT FOREIGN KEY (album_id) REFERENCES albums(id)
 CREATE TABLE sales (
 id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 sale_date DATE NOT NULL,
-sale_price DECIMAL (10,2) NOT NULL,
+sale_price FLOAT NOT NULL,
 orders_id INT UNSIGNED NOT NULL,      /*една поръчка може да съдържа много продажби, но всяка продажба се отнася до една конкретна поръчка*/
 CONSTRAINT FOREIGN KEY (orders_id) REFERENCES orders(id)
 );
@@ -143,15 +145,6 @@ PRIMARY KEY (composer_id, song_id)
 );
 
 
-CREATE TABLE composer_albums (
-composer_id INT UNSIGNED NOT NULL,
-album_id INT UNSIGNED NOT NULL,
-CONSTRAINT FOREIGN KEY (composer_id) REFERENCES composer(id),
-CONSTRAINT FOREIGN KEY (album_id) REFERENCES albums(id),
-PRIMARY KEY (composer_id, album_id)
-);
-
-
 CREATE TABLE album_genre (
 album_id INT UNSIGNED NOT NULL,
 genre_id INT UNSIGNED NOT NULL,
@@ -173,14 +166,6 @@ playlist_id INT UNSIGNED NOT NULL,
 user_id INT UNSIGNED NOT NULL,
 CONSTRAINT FOREIGN KEY (playlist_id) REFERENCES playlists(id),
 CONSTRAINT FOREIGN KEY (user_id) REFERENCES user(id)
-);
-
-
-CREATE TABLE playlist_order (  /*една плейлиста може да се поръча много пъти и обратно*/
-playlist_id INT UNSIGNED NOT NULL,
-order_id INT UNSIGNED NOT NULL,
-CONSTRAINT FOREIGN KEY (playlist_id) REFERENCES playlists(id),
-CONSTRAINT FOREIGN KEY (order_id) REFERENCES orders(id)
 );
 
 
