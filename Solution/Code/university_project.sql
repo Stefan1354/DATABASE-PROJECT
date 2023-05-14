@@ -34,7 +34,7 @@ CONSTRAINT FOREIGN KEY (userRole_id) REFERENCES userRole(id)
 CREATE TABLE orders (
 id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 order_date DATE NOT NULL,                /*дата на поръчката*/
-price FLOAT NOT NULL,           /*общата цена на поръчката*/
+price FLOAT NOT NULL,           	 /*общата цена на поръчката*/
 payment_status VARCHAR(100) NOT NULL,    /*статус на плащането*/
 delivery_status VARCHAR(100) NOT NULL,   /*статус на доставката*/
 user_id INT UNSIGNED NOT NULL,
