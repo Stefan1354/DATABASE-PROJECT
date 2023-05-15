@@ -209,13 +209,14 @@ INSERT INTO user (username, password, egn, address, phone, userRole_id)
 VALUES ('John Brown', 'H@rdT0Gu3ss!', '0123426739', '123 Main St, Anytown', '353-1333', 2),
        ('Jane Lee', '5tr0ngP@55w0rd', '2305673902', '21 Oak Ave, Otherville', NULL, 2),
        ('Oleg Smirnov', 'cat1@3!?5t', '3251789913', '34 Elm St, Somewhere', '757-1629', 2),
-       ('Sara Ali', 'tY5nCj!1', '1567390224', '78 Pine Rd, Anytown', NULL, 2),
-	   ('Mike Durant', 'P@8rKm#7', '5378101237', '21 Maple Dr, Otherville', '252-4424', 2),
-	   ('Bob Wilson', 'Q8zHfL!7a', '9782032300', '21A Cedar Ave, Somewhere', NULL, 2),
-	   ('Ana Petkova', '8#vQfLj!', '1890223959', '32B Oak St, Anytown', '607-8780', 2),
-	   ('Robert James', 'M9pBcT!z', '8901257547', '87A Birch Ln, Otherville', NULL, 2),
-	   ('Ekaterina Valova', '1#jGHTk$', '9012245778', '133 Elm St, Somewhere', '989-3460', 2),
-	   ('Beatris Grivardis', 'F7nGkP!z', '0103459701', '454 Maple Ave, Anytown', NULL, 1);
+       ('Sara Ali', 'tY5nCj!1', '1567390224', '78 Pine Rd, Anytown', NULL, 2), 
+       ('Mike Durant', 'P@8rKm#7', '5378101237', '21 Maple Dr, Otherville', '252-4424', 2),
+       ('Bob Wilson', 'Q8zHfL!7a', '9782032300', '21A Cedar Ave, Somewhere', NULL, 2), 
+       ('Ana Petkova', '8#vQfLj!', '1890223959', '32B Oak St, Anytown', '607-8780', 2),
+       ('Robert James', 'M9pBcT!z', '8901257547', '87A Birch Ln, Otherville', NULL, 2),  
+       ('Ekaterina Valova', '1#jGHTk$', '9012245778', '133 Elm St, Somewhere', '989-3460', 2),
+       ('Beatris Grivardis', 'F7nGkP!z', '0103459701', '454 Maple Ave, Anytown', '088-5035', 1);
+
 	
 
 INSERT INTO orders (order_date, price, payment_status, delivery_status, user_id)
