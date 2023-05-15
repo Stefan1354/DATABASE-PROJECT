@@ -220,19 +220,21 @@ VALUES ('John Brown', 'H@rdT0Gu3ss!', '0123426739', '123 Main St, Anytown', '353
 	
 
 INSERT INTO orders (order_date, price, payment_status, delivery_status, user_id)
-VALUES ('2023-03-25', 20.50, 'paid', 'delivered', 1),
-       ('2023-03-26', 25.80, 'paid', 'delivered', 2),
-       ('2023-03-26', 20.50, 'paid', 'delivered', 2),
-       ('2023-03-27', 15.00, 'paid', 'delivered', 3),
-       ('2023-04-03', 205.30, 'paid', 'in transit', 4),
-       ('2023-04-04', 12.75, 'paid', 'in transit', 5),
-       ('2023-04-07', 37.20, 'pending', 'pending', 5),
-       ('2023-04-07', 19.90, 'paid', 'in transit', 5),
-       ('2023-04-07', 150.60, 'paid', 'in transit', 6),
-       ('2023-04-10', 45.30, 'paid', 'delivered', 7),
-       ('2023-04-10', 45.30, 'paid', 'delivered', 8),
-       ('2023-04-12', 245.30, 'pending', 'not shipped', 9),
-       ('2023-04-15', 45.30, 'pending', 'not shipped', 10);
+VALUES ('2023-03-25', 50.00, 'paid', 'delivered', 1),
+       ('2023-03-26', 75.00, 'paid', 'delivered', 2),
+       ('2023-03-26', 120.00, 'paid', 'delivered', 2),
+       ('2023-03-27', 200.00, 'paid', 'delivered', 3),
+       ('2023-04-03', 150.00, 'paid', 'in transit', 4),
+       ('2023-04-04', 300.00, 'paid', 'in transit', 5),
+       ('2023-04-07', 400.00, 'pending', 'pending', 5),
+       ('2023-04-07', 250.00, 'paid', 'in transit', 5),
+       ('2023-04-07', 100.00, 'paid', 'in transit', 6),
+       ('2023-04-10', 32.00, 'paid', 'delivered', 7),
+       ('2023-04-10', 65.00, 'paid', 'delivered', 8),
+       ('2023-04-12', 70.00, 'pending', 'not shipped', 9),
+       ('2023-04-15', 500.00, 'pending', 'not shipped', 10); 
+       
+
        
        
 INSERT INTO playlists (name, songCount) 
