@@ -387,8 +387,8 @@ VALUES (3, 9),
 INSERT INTO composer_albums 
 VALUES (2, 4),
        (3, 4),
-	   (12, 3),
-	   (12, 5);
+       (12, 3),
+       (12, 5);
        
        
 INSERT INTO album_genre
