@@ -336,7 +336,7 @@ VALUES (NULL, 8.5, 'Great album, loved it!', '2023-02-20', 1, 1),
        (NULL, 4.3, 'Disappointing album, expected more from this artist', '2023-03-25', 7, 8),
        (NULL, 9.5, 'Absolutely amazing album, highly recommend', '2023-04-05', 8, 9),
        (NULL, 7.8, 'Good album, but not as good as their previous work', '2023-04-10', 9, 10),
-	   (NULL, 6.1, 'Not a fan of this album, couldn''t get into it', '2023-04-12', 10, 11);  
+       (NULL, 6.1, 'Not a fan of this album, couldn''t get into it', '2023-04-12', 10, 11);  
        
        
 INSERT INTO sales (sale_date, sale_price, orders_id)
