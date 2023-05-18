@@ -287,22 +287,23 @@ VALUES (NULL, 'Drake', '9124656742', '111 Pine St San Francisco, CA 94111', '098
 
 
 INSERT INTO albums
-VALUES (NULL, 'High Off Life', 21, 80.20, '2020-05-15', 'Republic Records', 1),
-       (NULL, 'Are You Experienced', 8, 42.39, '1969-10-22', 'Atlantic Records', 3),
-       (NULL, 'Divide', 11, 50.03, '2017-03-03', 'Asylum', 4),
-       (NULL, 'GEMINI', 16, 60.13, '2017-09-22', 'Bendo LLC', 10),
-       (NULL, 'The Orange Room', 15, 55.29, '2005-03-01', 'Sheeran Lock', 4),
-       (NULL, '7', 15, 43.37, '2021-09-17', 'Columbia Records', 7),
-       (NULL, 'Thriller', 9, 42.19, '1982-11-30', 'Epic Records', 8),
-       (NULL, 'Kind of Blue', 5, 45.52, '1959-08-17', 'Columbia Records', 9),
-       (NULL, 'Scorpion', 25, 89.04, '2018-06-29', 'Cash Money Records', 1),
-       (NULL, 'Future', 19, 66.14, '2017-02-17', 'Interscope Records', 2),
-       (NULL, 'Graduation', 13, 51.23, '2008-08-19', 'KonLive', 11),
-       (NULL, 'Wake Up', 13, 51.13, '2008-08-19', 'Domino Recording Company', 12),
-       (NULL, 'All or Nothing at All', 15, 32.48, '1938-08-19', 'Sony Music', 13),
-       (NULL, 'The Elephants of Mars', 10, 59.04, '1938-08-19', 'Universal Music Group', 14),
-       (NULL, 'Hello Dolly', 11, 40.24, '1938-08-19', 'Warner Music', 6),
-       (NULL, 'Journeyman', 12, 42.32, '1938-08-19', 'XL Recordings', 5);
+VALUES (NULL, 'High Off Life', 21, 80.20, '2020-05-15', 'Republic Records', 250.00, 1),
+       (NULL, 'Are You Experienced', 8, 42.39, '1969-10-22', 'Atlantic Records', 50.00, 3),
+       (NULL, 'Divide', 11, 50.03, '2017-03-03', 'Asylum', 150.00, 4),
+       (NULL, 'GEMINI', 16, 60.13, '2017-09-22', 'Bendo LLC', 600.00, 10),
+       (NULL, 'The Orange Room', 15, 55.29, '2005-03-01', 'Sheeran Lock', 110.00, 4),
+       (NULL, '7', 15, 43.37, '2021-09-17', 'Columbia Records', 120.00, 7),
+       (NULL, 'Thriller', 9, 42.19, '1982-11-30', 'Epic Records', 100.00, 8),
+       (NULL, 'Kind of Blue', 5, 45.52, '1959-08-17', 'Columbia Records', 400.00, 9),
+       (NULL, 'Scorpion', 25, 89.04, '2018-06-29', 'Cash Money Records', 450.00, 1),
+       (NULL, 'Future', 19, 66.14, '2017-02-17', 'Interscope Records', 300.00, 2),
+       (NULL, 'Graduation', 13, 51.23, '2008-08-19', 'KonLive', 250.00, 11),
+       (NULL, 'Wake Up', 13, 51.13, '2008-08-19', 'Domino Recording Company', 120.00, 12),
+       (NULL, 'All or Nothing at All', 15, 32.48, '1938-08-19', 'Sony Music', 30.00, 13),
+       (NULL, 'The Elephants of Mars', 10, 59.04, '1938-08-19', 'Universal Music Group', 150.00, 14), 
+       (NULL, 'Hello Dolly', 11, 40.24, '1938-08-19', 'Warner Music', 150.00, 6),
+       (NULL, 'Journeyman', 12, 42.32, '1938-08-19', 'XL Recordings', 100.00, 5);
+
        
        
 INSERT INTO song
