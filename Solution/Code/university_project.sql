@@ -359,7 +359,12 @@ INSERT INTO performer_song
 VALUES (4, 1),
        (4, 9),
        (10, 6),
-       (11, 6);
+       (11, 6),
+       (5, 7),
+       (4, 3),
+       (8, 4),
+       (5, 5);
+
        
        
 INSERT INTO performer_genre
@@ -371,11 +376,15 @@ VALUES (1, 3),
        
 INSERT INTO song_genre
 VALUES (5, 1),
-       (5, 2),
-       (8, 3),
-       (6, 3),
-       (10, 4),
-       (2, 3);
+       	     (5, 2),
+       	     (8, 3),
+       	     (6, 3),
+       	     (10, 4),
+      	     (2, 3),
+      	     (7, 4),
+     	     (9, 5),
+      	     (4, 6);
+
        
 
 INSERT INTO composer_song
