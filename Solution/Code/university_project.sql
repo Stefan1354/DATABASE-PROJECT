@@ -263,25 +263,27 @@ VALUES (NULL, 'Pop'),
        
 INSERT INTO performer
 VALUES (NULL, 'Drake', '9124656742', '111 Pine St San Francisco, CA 94111', '098-4265', '1986-10-24'),
-       (NULL, 'Future', '9219309213', '456 Oak Ave Springfield, USA', '099-4372', '1990-02-16'),
-       (NULL, 'Jimi Hendrix', '9029831092', '1111 Maple Ln Anytown, USA', '218-3890', '1942-11-27'),
-       (NULL, 'Ed Sheeran', '2909719423', '9999 Cedar Dr Anytown, USA', '012-4567', '1991-02-17'),
-       (NULL, 'Eric Clapton', '3053210991', '7879 Oak Ln Springfield, USA', NULL, '1945-03-30'),
-       (NULL, 'Louis Armstrong', '2907980123', '2525 Pine Ln Springfield, USA', '128-4355', '1901-08-04'),
-       (NULL, 'Lil Nas X', '9908978213', '2020 Pine Dr Anytown, USA', NULL, '1999-04-09'),
-       (NULL, 'Michael Jackson', '8909234560', '2222 Oak Ave Anytown, USA', '099-4369', '1958-08-29'),
-       (NULL, 'Miles Davis', '3202428290', '5555 Pine Ln Anytown, USA', '198-5141', '1926-05-26'),
-       (NULL, 'Macklemore', '4545009877', '6767 Cedar Rd Anytown, USA', NULL, '1983-06-19'),
-       (NULL, 'Kanye West', '9012341638', '2727 Oak St Springfield, USA', '108-4362', '1977-06-08'),
-       (NULL, 'John Legend', '3402921045', '2424 Birch Ct Anytown, USA', '028-1285', '1978-12-28'),
-       (NULL, 'Billie Holiday', '3003210981', '7878 Oak Ln Springfield, USA', NULL,  '1915-07-17'),
-       (NULL, 'Joseph Satriani', '3059210292', '7881 Oak Ln Springfield, USA', '201-4369', '1956-07-15'),
-       (NULL, '21 Savage', '9359410219', '7882 Oak Ln Springfield, USA', '101-5468', '1992-10-22'),
-       (NULL, 'Aggro Santoss', '0395210283', '7898 Oak Ln Springfield, USA', '109-2309', '1989-10-12'),
-       (NULL, 'Common', '5059220290', '0880 Oak Ln Springfield, USA', '252-4359', '1972-03-13'),
-       (NULL, 'Cardi B', '4059320291', '5353 Oak Ln Springfield, USA', '522-3790', '1992-10-11'),
-       (NULL, 'Ceza', '3038220281', '4884 Oak Ln Springfield, USA', '530-3438', '1976-12-31'),
-       (NULL, 'Tim Dog', '4139221298', '7229 Oak Ln Springfield, USA', '501-4392', '1976-01-03');
+       	     (NULL, 'Future', '9219309213', '456 Oak Ave Springfield, USA', '099-4372', '1990-02-16'),
+       	     (NULL, 'Jimi Hendrix', '9029831092', '1111 Maple Ln Anytown, USA', '218-3890', '1942-11-27'),
+                 (NULL, 'Ed Sheeran', '2909719423', '9999 Cedar Dr Anytown, USA', '012-4567', '1991-02-17'),
+                 (NULL, 'Eric Clapton', '3053210991', '7879 Oak Ln Springfield, USA', NULL, '1945-03-30'),
+                 (NULL, 'Louis Armstrong', '2907980123', '2525 Pine Ln Springfield, USA', '128-4355', '1901-08-04'),
+                 (NULL, 'Lil Nas X', '9908978213', '2020 Pine Dr Anytown, USA', NULL, '1999-04-09'),
+                 (NULL, 'Michael Jackson', '8909234560', '2222 Oak Ave Anytown, USA', '099-4369', '1958-08-29'),
+                 (NULL, 'Miles Davis', '3202428290', '5555 Pine Ln Anytown, USA', '198-5141', '1926-05-26'),
+                 (NULL, 'Macklemore', '4545009877', '6767 Cedar Rd Anytown, USA', NULL, '1983-06-19'),
+                 (NULL, 'Kanye West', '9012341638', '2727 Oak St Springfield, USA', '108-4362', '1977-06-08'),
+                 (NULL, 'John Legend', '3402921045', '2424 Birch Ct Anytown, USA', '028-1285', '1978-12-28'),
+                 (NULL, 'Billie Holiday', '3003210981', '4433 Cedar St Miami, USA', NULL,  '1915-07-17'),
+	     (NULL, 'Joseph Satriani', '3059210292', '853 Cedar Ave Springfield, USA', '201-4369', '1956-07-15'),
+                 (NULL, '21 Savage', '9359410219', '0929 Elm St Anytown, USA', '101-5468', '1992-10-22'),
+                 (NULL, 'Aggro Santoss', '0395210283', '8080 Maple Ln Anytown, USA', '109-2309', '1989-10-12'),
+                 (NULL, 'Common', '5059220290', '0880 Oak Ln Springfield, USA', '252-4359', '1972-03-13'),
+	     (NULL, 'Cardi B', '4059320291', '5608 Maple Blvd Los Angeles, USA', '522-3790', '1992-10-11'),
+                 (NULL, 'Ceza', '3038220281', '4884 Oak Ln Springfield, USA', '530-3438', '1976-12-31'),
+	     (NULL, 'Tim Dog', '4139221298', '729 Poplar Ave Anytown, USA', '601-4392', '1976-01-03');
+
+
 
 
 INSERT INTO albums
