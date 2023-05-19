@@ -406,13 +406,13 @@ VALUES (2, 4),
 INSERT INTO album_genre
 VALUES (1, 3),
        (1, 4),
-	   (5, 6),
-	   (6, 6);
+       (5, 6),
+       (6, 6);
 
 
 INSERT INTO playlist_album
 VALUES (2, 1),
-	   (2, 13),
+       (2, 13),
        (1, 2),
        (3, 2);
        
