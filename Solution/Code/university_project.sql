@@ -419,7 +419,7 @@ VALUES (2, 1),
        
 INSERT INTO playlist_user
 VALUES (2, 3),
-	   (2, 4),
+       (2, 4),
        (7, 5),
        (8, 5);
        
@@ -443,8 +443,8 @@ VALUES (10, 1),
        
 INSERT INTO sale_album
 VALUES (1, 1),
-	   (2, 2),
-	   (2, 7),
+       (2, 2),
+       (2, 7),
        (3, 4),
        (4, 5),
        (5, 3),
