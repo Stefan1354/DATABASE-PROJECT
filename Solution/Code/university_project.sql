@@ -337,7 +337,6 @@ VALUES (NULL, 8.5, 'Great album, loved it!', '2023-02-20', 1, 1),
        (NULL, 7.8, 'Good album, but not as good as their previous work', '2023-04-10', 9, 10);
  
        
-       
 INSERT INTO sales (sale_date, sale_price, orders_id)
 VALUES ('2023-04-01', 120.99, 1),
        ('2023-04-03', 35.99, 2),
