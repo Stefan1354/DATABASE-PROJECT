@@ -419,7 +419,6 @@ VALUES (10, 1),
        (8, 2);
 
        
-       
 INSERT INTO sale_album
 VALUES (1, 1),
        (2, 2),
