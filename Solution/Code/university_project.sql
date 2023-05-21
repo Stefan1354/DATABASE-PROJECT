@@ -233,10 +233,8 @@ VALUES ('2023-03-25', 50.00, 'paid', 'delivered', 1),
        ('2023-04-10', 65.00, 'paid', 'delivered', 8),
        ('2023-04-12', 70.00, 'pending', 'not shipped', 9),
        ('2023-04-15', 500.00, 'pending', 'not shipped', 10); 
-       
-
-       
-       
+      
+      
 INSERT INTO playlists (name, songCount) 
 VALUES ('Rock Anthems', 15),
        ('Hip Hop Bangers', 12),
