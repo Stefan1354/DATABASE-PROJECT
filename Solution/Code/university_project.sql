@@ -284,8 +284,6 @@ VALUES (NULL, 'Drake', '9124656742', '111 Pine St San Francisco, CA 94111', '098
        (NULL, 'Tim Dog', '4139221298', '729 Poplar Ave Anytown, USA', '601-4392', '1976-01-03');
 
 
-
-
 INSERT INTO albums
 VALUES (NULL, 'High Off Life', 21, 80.20, '2020-05-15', 'Republic Records', 250.00, 1),
        (NULL, 'Are You Experienced', 8, 42.39, '1969-10-22', 'Atlantic Records', 50.00, 3),
