@@ -394,13 +394,6 @@ VALUES (3, 9),
        (11, 2),
        (9, 1),
        (8, 1);
-
-
-INSERT INTO composer_albums 
-VALUES (2, 4),
-       (3, 4),
-       (12, 3),
-       (12, 5);
        
        
 INSERT INTO album_genre
@@ -422,13 +415,6 @@ VALUES (2, 3),
        (2, 4),
        (7, 5),
        (8, 5);
-       
-       
-INSERT INTO playlist_order
-VALUES (6, 1),
-       (6, 3),
-       (8, 2),
-       (10, 2);
 
 
 INSERT INTO user_album
