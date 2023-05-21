@@ -419,12 +419,11 @@ VALUES (2, 3),
 
 INSERT INTO user_album
 VALUES (10, 1),
-       (10, 5),
-       (2, 7),
-       (4, 7),
-       (1, 3),
-       (3, 4),
-       (7, 8);
+	     (10, 2),
+                 (1, 3),
+                 (3, 4),
+                 (8, 2);
+
        
        
 INSERT INTO sale_album
