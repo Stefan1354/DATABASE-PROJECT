@@ -361,7 +361,6 @@ VALUES (4, 1),
        (5, 5);
 
        
-       
 INSERT INTO performer_genre
 VALUES (1, 3),
        (1, 4),
