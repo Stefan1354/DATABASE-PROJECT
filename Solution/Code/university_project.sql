@@ -438,13 +438,13 @@ VALUES (1, 1),
        (4, 5);
        
 #2
-/*SELECT * FROM composer
-WHERE nationality = 'German';*/
+SELECT * FROM composer
+WHERE nationality = 'German';
 
 #3
-SELECT sale_date, ROUND(SUM(sale_price), 2) AS totalSum
+/*SELECT sale_date, ROUND(SUM(sale_price), 2) AS totalSum
 FROM sales
-GROUP BY sale_date;
+GROUP BY sale_date;*/
 
 
 #4
@@ -452,6 +452,7 @@ GROUP BY sale_date;
 FROM user 
 JOIN reviews ON user.id = reviews.user_id
 JOIN albums ON reviews.album_id = albums.id;*/
+
 
 #5
 /*SELECT albums.title AS albumName, 
