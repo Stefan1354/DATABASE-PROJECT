@@ -463,7 +463,8 @@ albums.record_label,
 performer.name AS performerName
 FROM albums 
 RIGHT OUTER JOIN performer
-ON albums.performer_id = performer.id;*/
+ON albums.performer_id = performer.id;
+*/
 
 #6
 /*SELECT song.name AS nameOfSong, genre.name AS genreName
