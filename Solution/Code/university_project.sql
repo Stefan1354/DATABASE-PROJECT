@@ -442,9 +442,10 @@ VALUES (1, 1),
 WHERE nationality = 'German';*/
 
 #3
-/*SELECT sale_date, SUM(sale_price) AS totalSum
+SELECT sale_date, ROUND(SUM(sale_price), 2) AS totalSum
 FROM sales
-GROUP BY sale_date;*/
+GROUP BY sale_date;
+
 
 #4
 /*SELECT user.username, reviews.comment, albums.title AS albumTitle
