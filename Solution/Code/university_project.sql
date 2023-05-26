@@ -440,9 +440,9 @@ SELECT * FROM composer
 WHERE nationality = 'German';
 
 #3
-/*SELECT sale_date, ROUND(SUM(sale_price), 2) AS totalSum
+SELECT sale_date, ROUND(SUM(sale_price), 2) AS totalSum
 FROM sales
-GROUP BY sale_date;*/
+GROUP BY sale_date;
 
 
 #4
