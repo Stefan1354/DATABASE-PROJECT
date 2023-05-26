@@ -436,6 +436,7 @@ VALUES (1, 1),
        (7, 8),
        (4, 5);
        
+       
 #2
 SELECT * FROM composer
 WHERE nationality = 'German';
