@@ -217,7 +217,6 @@ VALUES ('John Brown', 'H@rdT0Gu3ss!', '0123426739', '123 Main St, Anytown', '353
        ('Ekaterina Valova', '1#jGHTk$', '9012245778', '133 Elm St, Somewhere', '989-3460', 2),
        ('Beatris Grivardis', 'F7nGkP!z', '0103459701', '454 Maple Ave, Anytown', '088-5035', 1);
 
-	
 
 INSERT INTO orders (order_date, price, payment_status, delivery_status, user_id)
 VALUES ('2023-03-25', 50.00, 'paid', 'delivered', 1),
