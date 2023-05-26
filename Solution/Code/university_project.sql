@@ -300,7 +300,6 @@ VALUES (NULL, 'High Off Life', 21, 80.20, '2020-05-15', 'Republic Records', 250.
        (NULL, 'Journeyman', 12, 42.32, '1938-08-19', 'XL Recordings', 100.00, 5);
 
        
-       
 INSERT INTO song
 VALUES (NULL ,'Shape Of You', 'https://www.youtube.com/watch?v=JGwWNGJdvx8', 'Pop', 'R&B', 263, 5900000000, 3),
        (NULL, 'Life Is Good', 'https://www.youtube.com/watch?v=l0U7SxXHkPY', 'Hip-hop', 'Trap', 237, 2100050978, 1),
