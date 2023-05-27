@@ -446,10 +446,10 @@ GROUP BY sale_date;
 
 
 #4
-/*SELECT user.username, reviews.comment, albums.title AS albumTitle
+SELECT user.username, reviews.comment, albums.title AS albumTitle
 FROM user 
 JOIN reviews ON user.id = reviews.user_id
-JOIN albums ON reviews.album_id = albums.id;*/
+JOIN albums ON reviews.album_id = albums.id;
 
 
 #5
