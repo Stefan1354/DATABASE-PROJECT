@@ -465,13 +465,13 @@ ON albums.performer_id = performer.id;
 
 
 #6
-/*SELECT song.name AS nameOfSong, genre.name AS genreName
+SELECT song.name AS nameOfSong, genre.name AS genreName
 FROM song JOIN genre
 ON song.id IN (
 		SELECT song_id
         FROM song_genre
         WHERE song_genre.genre_id = genre.id
-        );*/
+        );
         
 #7       
 /*SELECT albums.title AS nameOfAlbum, COUNT(sale_album.sale_id) AS sales_count, SUM(sales.sale_price) as total_sales
