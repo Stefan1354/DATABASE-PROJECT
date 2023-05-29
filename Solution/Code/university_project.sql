@@ -453,7 +453,7 @@ JOIN albums ON reviews.album_id = albums.id;
 
 
 #5
-/*SELECT albums.title AS albumName, 
+SELECT albums.title AS albumName, 
 albums.numberOfSongs, 
 albums.length, 
 albums.release_date, 
@@ -462,7 +462,7 @@ performer.name AS performerName
 FROM albums 
 RIGHT OUTER JOIN performer
 ON albums.performer_id = performer.id;
-*/
+
 
 #6
 /*SELECT song.name AS nameOfSong, genre.name AS genreName
