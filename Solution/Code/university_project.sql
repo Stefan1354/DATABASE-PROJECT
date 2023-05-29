@@ -473,6 +473,7 @@ ON song.id IN (
         WHERE song_genre.genre_id = genre.id
         );
         
+	
 #7       
 /*SELECT albums.title AS nameOfAlbum, COUNT(sale_album.sale_id) AS sales_count, SUM(sales.sale_price) as total_sales
 FROM albums
