@@ -439,6 +439,7 @@ VALUES (1, 1),
 SELECT * FROM composer
 WHERE nationality = 'German';
 
+
 #3
 SELECT sale_date, ROUND(SUM(sale_price), 2) AS totalSum
 FROM sales
@@ -475,11 +476,13 @@ ON song.id IN (
         
 	
 #7       
-/*SELECT albums.title AS nameOfAlbum, COUNT(sale_album.sale_id) AS sales_count, SUM(sales.sale_price) as total_sales
+SELECT albums.title AS nameOfAlbum, COUNT(sale_album.sale_id) AS sales_count, SUM(sales.sale_price) as total_sales
 FROM albums
 JOIN sale_album ON albums.id = sale_album.album_id
 JOIN sales ON sale_album.sale_id = sales.id
 GROUP BY albums.id
 HAVING total_sales > 100
 ORDER BY total_sales DESC
-LIMIT 3;*/
+LIMIT 3;
+
+
