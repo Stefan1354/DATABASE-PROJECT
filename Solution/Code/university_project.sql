@@ -484,6 +484,3 @@ GROUP BY albums.id
 HAVING total_sales > 100
 ORDER BY total_sales DESC
 LIMIT 3;
-
-
-
