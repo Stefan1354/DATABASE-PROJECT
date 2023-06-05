@@ -49,7 +49,7 @@ songCount INT UNSIGNED NOT NULL   /*брой на песните в плейли
 );
 
 
-CREATE TABLE genre (              /*в тази таблица ще съхраняваме жанровете на песните в сайта*/
+CREATE TABLE genre (              
 id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 name VARCHAR(255) NOT NULL
 );
@@ -107,7 +107,7 @@ CREATE TABLE sales (
 id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 sale_date DATE NOT NULL,
 sale_price FLOAT NOT NULL,
-orders_id INT UNSIGNED NOT NULL,      /*една поръчка може да съдържа много продажби, но всяка продажба се отнася до една конкретна поръчка*/
+orders_id INT UNSIGNED NOT NULL,     
 CONSTRAINT FOREIGN KEY (orders_id) REFERENCES orders(id)
 );
 
