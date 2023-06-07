@@ -484,3 +484,28 @@ GROUP BY albums.id
 HAVING total_sales > 100
 ORDER BY total_sales DESC
 LIMIT 3;
+
+#8
+DELIMITER //
+CREATE TRIGGER increase_album_price 
+AFTER INSERT ON song
+FOR EACH ROW
+BEGIN
+    DECLARE album_songs INT;
+    DECLARE album_price FLOAT;
+    SELECT numberOfSongs, price INTO album_songs, 
+    album_price FROM albums WHERE id = NEW.album_id;
+    IF album_songs >= 10 THEN
+        UPDATE albums 
+        SET price = album_price * 1.5 WHERE id = NEW.album_id;
+    ELSEIF album_songs < 10 THEN
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Album must have at least 10 songs';
+    ELSEIF album_songs IS NULL THEN
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Invalid number of songs in album';
+    END IF;
+END//
+DELIMITER ;
+
+INSERT INTO song
+VALUES (NULL ,'Shape Of You', 'https://www.youtube.com/watch?v=JGwWNGJdvx8', 'Pop', 'R&B', 263, 5900000000, 3),
+       (NULL, 'Zoom', 'https://www.youtube.com/watch?v=q9HCGqByjak', 'Hip-hop', 'Electronic', 325, 20200300, 10);       
