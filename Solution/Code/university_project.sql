@@ -85,7 +85,7 @@ link VARCHAR(255) NOT NULL UNIQUE,
 style VARCHAR(100) NOT NULL,
 arrangement VARCHAR(100) NOT NULL,
 duration INT UNSIGNED NOT NULL,
-numberOfViews BIGINT UNSIGNED NOT NULL,   /*брой на гледания на песента в платформата Youtube*/
+numberOfViews BIGINT UNSIGNED NOT NULL,   /*брой на гледания песента на Youtube*/
 album_id INT UNSIGNED NOT NULL,
 CONSTRAINT FOREIGN KEY (album_id) REFERENCES albums(id)
 );
@@ -128,7 +128,7 @@ CONSTRAINT FOREIGN KEY (genre_id) REFERENCES genre(id)
 );
 
 
-CREATE TABLE song_genre (       /*една песен може да принадлежи на повече жанра и обратно*/
+CREATE TABLE song_genre (       /*една песен може да принадлежи на повече от един жанр и обратно*/
 song_id INT UNSIGNED NOT NULL,
 genre_id INT UNSIGNED NOT NULL,
 CONSTRAINT FOREIGN KEY (song_id) REFERENCES song(id),
