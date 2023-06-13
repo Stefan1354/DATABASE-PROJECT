@@ -508,4 +508,22 @@ DELIMITER ;
 
 INSERT INTO song
 VALUES (NULL ,'Shape Of You', 'https://www.youtube.com/watch?v=JGwWNGJdvx8', 'Pop', 'R&B', 263, 5900000000, 3),
-       (NULL, 'Zoom', 'https://www.youtube.com/watch?v=q9HCGqByjak', 'Hip-hop', 'Electronic', 325, 20200300, 10);       
+       (NULL, 'Zoom', 'https://www.youtube.com/watch?v=q9HCGqByjak', 'Hip-hop', 'Electronic', 325, 20200300, 10); 
+       
+#9
+DELIMITER |
+
+CREATE PROCEDURE createPlaylistByGenre(IN genreName VARCHAR(255))
+BEGIN
+    DECLARE numViewsThreshold INT DEFAULT 1000000;
+    DECLARE tempSongName VARCHAR(255);
+    DECLARE tempSongLink VARCHAR(255);
+    DECLARE tempSongStyle VARCHAR(255);
+    DECLARE tempSongArrangement VARCHAR(255);
+    DECLARE tempSongDuration INT;
+    DECLARE tempSongNumberOfViews INT;
+    DECLARE tempAlbumName VARCHAR(255);
+    DECLARE cursorFinished INT DEFAULT 0;
+    DECLARE genreExists INT DEFAULT 0; 
+    DECLARE tempCursor CURSOR FOR
+
