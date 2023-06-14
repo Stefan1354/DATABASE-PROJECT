@@ -526,4 +526,10 @@ BEGIN
     DECLARE cursorFinished INT DEFAULT 0;
     DECLARE genreExists INT DEFAULT 0; 
     DECLARE tempCursor CURSOR FOR
-
+    SELECT song.name, song.link, song.style, song.arrangement, song.duration, song.numberOfViews, albums.title     
+        FROM song
+        JOIN song_genre ON song.id = song_genre.song_id
+        JOIN genre ON song_genre.genre_id = genre.id
+        JOIN albums ON song.album_id = albums.id
+        WHERE genre.name = genreName AND song.numberOfViews > numViewsThreshold
+        ORDER BY song.duration DESC;
