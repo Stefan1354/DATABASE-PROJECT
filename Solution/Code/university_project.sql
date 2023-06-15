@@ -533,3 +533,22 @@ BEGIN
         JOIN albums ON song.album_id = albums.id
         WHERE genre.name = genreName AND song.numberOfViews > numViewsThreshold
         ORDER BY song.duration DESC;
+	
+   DECLARE CONTINUE HANDLER FOR NOT FOUND SET cursorFinished = 1;
+
+   SELECT COUNT(*) INTO genreExists FROM genre WHERE name = genreName;
+
+    IF genreExists = 0 THEN 
+            SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Invalid genre';
+    ELSE
+            DROP TABLE IF EXISTS tempPlaylist;
+            CREATE TEMPORARY TABLE tempPlaylist (
+                name VARCHAR(255) NOT NULL,
+                link VARCHAR(255) NOT NULL,
+                style VARCHAR(100) NOT NULL,
+                arrangement VARCHAR(100) NOT NULL,
+               duration INT UNSIGNED NOT NULL,
+               numberOfViews BIGINT UNSIGNED NOT NULL,
+               album_name VARCHAR(255) NOT NULL
+               ) Engine = Memory;
+
