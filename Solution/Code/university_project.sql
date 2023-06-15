@@ -547,8 +547,8 @@ BEGIN
                 link VARCHAR(255) NOT NULL,
                 style VARCHAR(100) NOT NULL,
                 arrangement VARCHAR(100) NOT NULL,
-               duration INT UNSIGNED NOT NULL,
-               numberOfViews BIGINT UNSIGNED NOT NULL,
-               album_name VARCHAR(255) NOT NULL
-               ) Engine = Memory;
+                duration INT UNSIGNED NOT NULL,
+                numberOfViews BIGINT UNSIGNED NOT NULL,
+                album_name VARCHAR(255) NOT NULL
+                ) Engine = Memory;
 
