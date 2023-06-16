@@ -11,3 +11,5 @@ STAY TUNED!
 
 ![ajdebre](https://user-images.githubusercontent.com/101529092/236326284-9a24807d-d6c8-4531-a04e-bba4c9f7d242.png)
 
+2. Then I will insert test data into the tables
+
