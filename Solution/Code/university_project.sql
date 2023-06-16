@@ -551,4 +551,26 @@ BEGIN
                 numberOfViews BIGINT UNSIGNED NOT NULL,
                 album_name VARCHAR(255) NOT NULL
                 ) Engine = Memory;
+		
+		OPEN tempCursor;
+              cursorLoop: LOOP
+                  FETCH tempCursor INTO tempSongName, tempSongLink, tempSongStyle, tempSongArrangement, tempSongDuration, tempSongNumberOfViews, tempAlbumName;
+                  IF cursorFinished THEN
+                        LEAVE cursorLoop;
+                  END IF;                           
+
+                  INSERT INTO tempPlaylist(name, link, style,  arrangement, duration, numberOfViews, album_name)
+                  VALUES (tempSongName, tempSongLink,  tempSongStyle, tempSongArrangement, tempSongDuration, tempSongNumberOfViews, tempAlbumName);
+              END LOOP;
+
+              CLOSE tempCursor;
+
+              SELECT * FROM tempPlaylist
+              ORDER BY duration DESC;
+
+              DROP TABLE tempPlaylist;
+      END IF;
+
+END;
+|
 
