@@ -13,3 +13,6 @@ STAY TUNED!
 
 2. Then I will insert test data into the tables
 
+![Untitled](https://github.com/Stefan1354/DATABASE-PROJECT/assets/101529092/7bd852fc-82e9-41bd-b1c4-da6dec38f5d3)
+
+
