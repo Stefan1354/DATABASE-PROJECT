@@ -574,3 +574,6 @@ BEGIN
 END;
 |
 
+DELIMITER ;
+
+CALL createPlaylistByGenre('Hip-hop');
