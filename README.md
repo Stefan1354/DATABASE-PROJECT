@@ -15,4 +15,8 @@ STAY TUNED!
 
 ![Untitled](https://github.com/Stefan1354/DATABASE-PROJECT/assets/101529092/7bd852fc-82e9-41bd-b1c4-da6dec38f5d3)
 
+3. And "at the end" I completed the corresponding tasks, which you can look at in the folder Solution -> university_project.sql
+![Screenshot_11](https://github.com/Stefan1354/DATABASE-PROJECT/assets/101529092/e2ea5bde-d007-41a2-af86-e7d5ce21cb23)
+
+
 
