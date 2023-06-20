@@ -16,8 +16,4 @@ STAY TUNED!
 ![Untitled](https://github.com/Stefan1354/DATABASE-PROJECT/assets/101529092/7bd852fc-82e9-41bd-b1c4-da6dec38f5d3)
 
 ![image](https://github.com/Stefan1354/DATABASE-PROJECT/assets/101529092/f0e2c81b-47b7-4da4-a7fb-c25e6e63b34d)
-
 ![Screenshot_11](https://github.com/Stefan1354/DATABASE-PROJECT/assets/101529092/e2ea5bde-d007-41a2-af86-e7d5ce21cb23)
-
-
-
