@@ -578,3 +578,14 @@ END;
 DELIMITER ;
 
 CALL createPlaylistByGenre('Hip-hop');
+
+/*Условия на защитата на проекта!!!*/
+
+/*Напишете заявка, която извежда имената, авторите и жанровете на 10-те най-популярни песни*/
+SELECT song.name AS songName, composer.name AS composerName, genre.name AS genreName
+FROM song JOIN song_genre ON song.id = song_genre.song_id
+JOIN genre ON song_genre.genre_id = genre.id
+JOIN composer_song ON song.id = composer_song.song_id
+JOIN composer ON composer.id = composer_song.composer_id
+ORDER BY song.numberOfViews DESC
+LIMIT 10;
