@@ -604,3 +604,25 @@ LIMIT 10;
     GROUP BY song.id
     ORDER BY SUM(sale_date.sale_price) DESC
     LIMIT 10;*/
+
+SELECT 
+    GROUP_CONCAT(DISTINCT song.name) AS songName,
+    GROUP_CONCAT(DISTINCT composer.name) AS composerName,
+    GROUP_CONCAT(DISTINCT genre.name) AS genreName
+FROM 
+    song 
+    JOIN song_genre ON song.id = song_genre.song_id
+    JOIN genre ON song_genre.genre_id = genre.id
+    JOIN composer_song ON song.id = composer_song.song_id
+    JOIN composer ON composer.id = composer_song.composer_id
+    JOIN albums ON song.album_id = albums.id
+    JOIN sale_album ON albums.id = sale_album.album_id
+    JOIN sales ON sale_album.sale_id = sales.id
+WHERE 
+    MONTH(sale_album.sale_date) = MONTH(NOW())
+GROUP BY 
+    song.id
+ORDER BY 
+    SUM(sale_album.sale_price) DESC
+LIMIT 10;
+
