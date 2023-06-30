@@ -591,7 +591,7 @@ ORDER BY song.numberOfViews DESC
 LIMIT 10;
 
 /*Напишете заявка, която извежда имената, авторите и жанровете на 10-те най-продавани песни*/
-     JOIN albums ON song.album_id = albums.id
+     JOIN albums ON song.album_id 
      JOIN sale_album ON albums.id = sale_album.album_id
      JOIN sales  ON sale_album.sale_id = sales.id
     WHERE MONTH(sale_album.sale_date) = MONTH(NOW())
