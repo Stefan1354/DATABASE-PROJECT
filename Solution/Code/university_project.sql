@@ -591,8 +591,6 @@ ORDER BY song.numberOfViews DESC
 LIMIT 10;
 
 /*Напишете заявка, която извежда имената, авторите и жанровете на 10-те най-продавани песни*/
-    JOIN composer_song ON song.id = composer_song.song_id
-    JOIN composer ON composer.id = composer_song.composer_id
      JOIN albums ON song.album_id = albums.id
      JOIN sale_album ON albums.id = sale_album.album_id
      JOIN sales  ON sale_album.sale_id = sales.id
