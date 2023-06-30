@@ -593,7 +593,7 @@ LIMIT 10;
 /*Напишете заявка, която извежда имената, авторите и жанровете на 10-те най-продавани песни*/
     WHERE MONTH(sale_album.sale_date) = MONTH(NOW())
     GROUP BY song.id
-    ORDER BY SUM(sale_date.sale_price) DESC
+    ORDER BY SUM(sale_date.sale_price) 
     LIMIT 10;*/
 
 SELECT 
