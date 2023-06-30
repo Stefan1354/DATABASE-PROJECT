@@ -611,4 +611,3 @@ GROUP BY
 ORDER BY 
     SUM(sale_album.sale_price) DESC
 LIMIT 10;
-
