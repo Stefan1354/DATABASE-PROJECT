@@ -591,7 +591,7 @@ ORDER BY song.numberOfViews DESC
 LIMIT 10;
 
 /*Напишете заявка, която извежда имената, авторите и жанровете на 10-те най-продавани песни*/
-    WHERE MONTH(sale_album.sale_date) = MONTH(NOW())
+    WHERE MONTH(sale_album.sale_date) 
     GROUP BY song.id
     ORDER BY SUM(sale_date.sale_price) 
     LIMIT 10;*/
