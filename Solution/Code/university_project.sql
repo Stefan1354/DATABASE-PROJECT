@@ -591,7 +591,6 @@ ORDER BY song.numberOfViews DESC
 LIMIT 10;
 
 /*Напишете заявка, която извежда имената, авторите и жанровете на 10-те най-продавани песни*/
-    ORDER BY
     LIMIT 10;*/
 
 SELECT 
