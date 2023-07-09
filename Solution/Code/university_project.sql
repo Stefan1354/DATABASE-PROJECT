@@ -613,18 +613,27 @@ ORDER BY
 LIMIT 10;
 
 /*Напишете заявка, която извежда имената, авторите и жанровете на 10-те най-коментирани песни*/
-SELECT song.name AS songName,  composer.name AS composerName, genre.name AS genreName
-FROM song 
-JOIN song_genre ON song.id = song_genre.song_id
-JOIN genre ON song_genre.genre_id = genre.id
-JOIN composer_song ON song.id = composer_song.song_id
-JOIN composer ON composer.id = composer_song.composer_id
-JOIN albums ON song.album_id = albums.id
-JOIN reviews ON reviews.album_id = albums.id
-JOIN user ON reviews.user_id = user.id
-WHERE MONTH(reviews.review_date) = MONTH(NOW())
-GROUP BY song.id
-ORDER BY COUNT(reviews.id) DESC
+
+
+SELECT 
+    GROUP_CONCAT(DISTINCT song.name) AS songName,
+    GROUP_CONCAT(DISTINCT composer.name) AS composerName,
+    GROUP_CONCAT(DISTINCT genre.name) AS genreName
+FROM 
+    song 
+    JOIN song_genre ON song.id = song_genre.song_id
+    JOIN genre ON song_genre.genre_id = genre.id
+    JOIN composer_song ON song.id = composer_song.song_id
+    JOIN composer ON composer.id = composer_song.composer_id
+    JOIN albums ON song.album_id = albums.id
+    JOIN reviews ON reviews.album_id = albums.id
+    JOIN user ON reviews.user_id = user.id
+WHERE 
+    MONTH(reviews.review_date) = MONTH(NOW())
+GROUP BY 
+    song.id
+ORDER BY 
+    COUNT(reviews.id) DESC
 LIMIT 10;
 END;
 $$
