@@ -613,8 +613,6 @@ ORDER BY
 LIMIT 10;
 
 /*Напишете заявка, която извежда имената, авторите и жанровете на 10-те най-коментирани песни*/
-
-
 SELECT 
     GROUP_CONCAT(DISTINCT song.name) AS songName,
     GROUP_CONCAT(DISTINCT composer.name) AS composerName,
